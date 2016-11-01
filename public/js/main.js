@@ -45,4 +45,24 @@ init(function(data){
 	// console.table(data);
 	console.log(data);
 	test = data;
+
+	//load in some testdata!!
+	load(data1);
+
 });
+
+$(document).ready(function(){
+
+	$('.loadOne').click(function(){
+		load(data1);
+	})
+
+	$('.loadTwo').click(function(){
+		load(data2);
+	})
+
+	$('.loadThree').click(function(){
+		load(data3);
+	})
+
+})
