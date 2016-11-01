@@ -55,7 +55,7 @@ var check3 = function(data,cb){
 		cardNumbersWithEmails.push(obj);
 	}
 
-	console.log(cardNumbersWithEmails);
+	// console.log(cardNumbersWithEmails);
 
 	//set points to data
 	for(var i = 0;i<data.length;i++){

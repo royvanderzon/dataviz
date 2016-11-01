@@ -1,5 +1,9 @@
 var datavis = {
 	data : {
+		countries : {
+			list: [],
+			stats : {}
+		},
 		raw : []
 	},
 	drempels : {
@@ -19,7 +23,9 @@ var datavis = {
 				}else{
 					return 20;
 				}
-			}
+			},
+			check5 : 35,
+			check6 : 35
 		}
 	}
 }
