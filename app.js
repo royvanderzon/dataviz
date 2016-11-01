@@ -17,6 +17,10 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var multer  	 = require('multer');
 
+var file = require('file-system');
+var fs = require('fs');
+var csv = require("fast-csv");
+
 // Routes
 var profileRoutes = require('./app/profileRoutes');
 
