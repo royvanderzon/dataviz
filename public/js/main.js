@@ -9,9 +9,13 @@ var init = function(cb){
 	//check 1
 	check1(data,function(){
 
-		if(typeof cb === 'function'){
-			cb();
-		}	
+		check1(data,function(){
+
+			if(typeof cb === 'function'){
+				cb();
+			}
+
+		});
 
 	});
 
