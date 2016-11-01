@@ -35,15 +35,8 @@ module.exports = function(app) {
     app.get('/', functions.check, function(req, res) {
 
     	res.render('home/index',{
-    		data : JSON.stringify(functions.data.raw)
-    	});
+    	   data : JSON.stringify(functions.data.raw)
+        });
 
-    	// res.json(functions.data.raw);
-
-  app.get('/', functions.check, function(req, res) {
-
-    res.render('home/index');
-
-  });
-
+    });
 }
