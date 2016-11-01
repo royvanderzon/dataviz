@@ -1,5 +1,7 @@
 //shopper country is high risk
 
+var test = [];
+
 var check1 = function(data,cb){
 
 	console.log(data);
@@ -7,13 +9,10 @@ var check1 = function(data,cb){
 	var shoppercountrycodes = {};
 	var differentCountries = [];
 
+	//loop --> all data to get all countries and set fraud
 	for(var i = 0;i<data.length;i++){
 
 		if(typeof shoppercountrycodes[data[i].shoppercountrycode] === 'object'){
-
-			// if(data[i].shoppercountrycode.length == 0){
-			// 	data[i].shoppercountrycode = '(unknown)';
-			// }
 
 			shoppercountrycodes[data[i].shoppercountrycode].aantal++;
 
@@ -45,31 +44,36 @@ var check1 = function(data,cb){
 
 	}
 
+	//set at each country fraud points and percentage
+	for(var i = 0;i<differentCountries.length;i++){
+		var fraudPercentage = shoppercountrycodes[differentCountries[i]].fraud * 100 / shoppercountrycodes[differentCountries[i]].aantal;
+		shoppercountrycodes[differentCountries[i]].fraudPercentage = fraudPercentage;
+		shoppercountrycodes[differentCountries[i]].risk = datavis.drempels.checks.check1(fraudPercentage);
+	}
 
+	for(var i = 0;i<data.length;i++){
 
-	// for(var i = 0;i<differentCountries.length;i++){
+		// console.log(data[i].shoppercountrycode);
 
-	// 	console.log(i);
+		for(var ii = 0;ii<differentCountries.length;ii++){
 
-	// 	var risk = shoppercountrycodes[i].fraud * 100 / shoppercountrycodes[i].aantal;
-	// 	shoppercountrycodes[i].risk = risk;
+			if(data[i].shoppercountrycode == differentCountries[ii]){
+				// console.log('match!');
 
-	// 	console.log(shoppercountrycodes[i]);
+				// console.log(data[i].shoppercountrycode)
+				data[i].checks = {};
+				data[i].checks.check1 = shoppercountrycodes[differentCountries[ii]].risk;
+				// data[i].checks.check1 = 1;
 
-	// }
+			}
 
-	console.log(differentCountries);
+		}
 
-	// switch(1) {
- //    case 1:
- //    	console.log('hallo')
- //    	break;
- //    default:
- //    	console.log('default');
- //    	break;
-// }
+	}
 
 	console.log(shoppercountrycodes);
+	console.log(data);
+	test = data;
 
 	if(typeof cb === 'function'){
 		console.log('check 1 - DONE');

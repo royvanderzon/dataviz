@@ -13,7 +13,7 @@ var init = function(cb){
 			cb();
 		}	
 
-	})
+	});
 
 
 }
