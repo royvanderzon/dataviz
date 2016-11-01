@@ -3,29 +3,29 @@ global.__base = __dirname + '/';
 
 // set up ======================================================================
 // get all the tools we need
-var express  = require('express');
-var app      = express();
+const express  = require('express');
+const app      = express();
 
-var port     = process.env.PORT || 3000; //8080
-var flash    = require('connect-flash');
-var path 	 = require('path');
+const port     = process.env.PORT || 3000; //8080
+const flash    = require('connect-flash');
+const path 	 = require('path');
 
-var functions 	    	 = require('./functions');
-var morgan       = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
-var session      = require('express-session');
-var multer  	 = require('multer');
+const functions 	    	 = require('./functions');
+const morgan       = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser   = require('body-parser');
+const session      = require('express-session');
+const multer  	 = require('multer');
 
-var file = require('file-system');
-var fs = require('fs');
-var csv = require("fast-csv");
+const file = require('file-system');
+const fs = require('fs');
+const csv = require("fast-csv");
 
 // Routes
-var profileRoutes = require('./app/profileRoutes');
+const profileRoutes = require('./app/profileRoutes');
 
 // Uploaden
-var upload = multer({dest: 'public/uploads/'});
+const upload = multer({dest: 'public/uploads/'});
 // Puplic
 app.use(express.static('public')); // to add CSS
 

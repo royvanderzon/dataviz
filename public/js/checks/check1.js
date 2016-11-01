@@ -1,13 +1,13 @@
 //shopper country is high risk
 
-var check1 = function(data,cb){
+const check1 = function(data,cb){
 
 	console.log(data);
 
-	var shoppercountrycodes = {};
-	var differentCountries = [];
+	const shoppercountrycodes = {};
+	const differentCountries = [];
 
-	for(var i = 0;i<data.length;i++){
+	for(const i = 0;i<data.length;i++){
 
 		if(typeof shoppercountrycodes[data[i].shoppercountrycode] === 'object'){
 
@@ -25,7 +25,7 @@ var check1 = function(data,cb){
 
 		}else{
 
-			var obj = {
+			const obj = {
 				aantal : 1,
 				fraud : 0,
 				noFraud : 0
@@ -47,11 +47,11 @@ var check1 = function(data,cb){
 
 
 
-	// for(var i = 0;i<differentCountries.length;i++){
+	// for(const i = 0;i<differentCountries.length;i++){
 
 	// 	console.log(i);
 
-	// 	var risk = shoppercountrycodes[i].fraud * 100 / shoppercountrycodes[i].aantal;
+	// 	const risk = shoppercountrycodes[i].fraud * 100 / shoppercountrycodes[i].aantal;
 	// 	shoppercountrycodes[i].risk = risk;
 
 	// 	console.log(shoppercountrycodes[i]);

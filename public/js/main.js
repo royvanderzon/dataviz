@@ -2,9 +2,9 @@
 //# INIT
 ///////////////////////////////////////////////////////
 
-var init = function(cb){
+const init = function(cb){
 
-	var data = datavis.data.raw;
+	const data = datavis.data.raw;
 
 	//check 1
 	check1(data,function(){

@@ -1,4 +1,4 @@
-txid,amount,shopper_country,issuer_country,shopper_email,creation_date,card_number_hash,txvariantcode,bin,fraud,currency
+txid,amount,shopper_country,issuer_country,shopper_email,creation_date,card_number_hash,txconstiantcode,bin,fraud,currency
 19,21545,(unknown),US,ricardoamana@gmail.com,03/14/16 03:49 PM,70b698b2251bq,visadebit,456534,1,USD
 8,1999,(unknown),US,5931313455@qq.com,03/14/16 03:25 PM,0a6388ca9b96c,mccredit,558764,0,USD
 26,17990,US,US,jonkirkpatrick@gmail.com,03/14/16 03:59 PM,fe136026dreb12,visadebit,485340,0,USD

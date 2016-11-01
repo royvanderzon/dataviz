@@ -1,28 +1,28 @@
-var file = require('file-system');
-var fs = require('fs');
-var csv = require("fast-csv");
-var functions = require('../functions');
+const file = require('file-system');
+const fs = require('fs');
+const csv = require('fast-csv');
+const functions = require('../functions');
 
-var stream = fs.createReadStream("./data/data.csv");
+const stream = fs.createReadStream('./data/data.csv');
 
-var csvStream = csv({headers: true})
-    .on("data", function(data){
+const csvStream = csv({headers: true})
+    .on('data', function(data){
          // console.log(data);
          // functions.data.raw.push(data);
 
 
-         var obj = {};
+         const obj = {};
 
          // functions.data.raw = data;
          functions.data.raw.push(data);
     })
-    .on("end", function(){
-         console.log("done");
+    .on('end', function(){
+         console.log('done');
     });
 
-var getData = function(){
+const getData = function(){
 
- 	var headers = [];
+ 	const headers = [];
 
 	stream.pipe(csvStream);
 
