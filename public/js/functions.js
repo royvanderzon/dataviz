@@ -6,9 +6,12 @@ var datavis = {
 		denied : 100,
 		checks : {
 			check1 : function(percent){
-				return Math.floor(percent * 1);
+				return Math.floor(percent * datavis.drempels.checks.check1Factor);
 			},
-			check2 : function(){
+			check1Factor : 1, //percentage factor
+			check2 : {
+				unknown : 10,
+				different : 5
 			}
 		}
 	}

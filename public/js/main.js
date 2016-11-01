@@ -9,10 +9,10 @@ var init = function(cb){
 	//check 1
 	check1(data,function(){
 
-		check1(data,function(){
+		check2(data,function(){
 
 			if(typeof cb === 'function'){
-				cb();
+				cb(data);
 			}
 
 		});
@@ -22,6 +22,11 @@ var init = function(cb){
 
 }
 
-init(function(){
+var test = [];
+
+init(function(data){
 	console.log('All checks - DONE');
+	// console.table(data);
+	console.log(data);
+	test = data;
 });
