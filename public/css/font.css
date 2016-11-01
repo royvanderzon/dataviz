@@ -1,0 +1,119 @@
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Vollkorn*/
+
+@font-face {
+    font-family: vollkorn-regular;
+    src: url('../fonts/vollkorn/Vollkorn-Regular.otf');
+}
+/*@font-face {
+    font-family: vollkorn-regular;
+    src: url('../fonts/vollkorn/Vollkorn-Bold.otf');
+}
+@font-face {
+    font-family: vollkorn-regular;
+    src: url('../fonts/vollkorn/Vollkorn-Italic.otf');
+}*/
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Ubuntu*/
+
+/*@font-face {
+    font-family: Ubuntu-B;
+    src: url('../fonts/ubuntu/Ubuntu-B.ttf');
+}
+@font-face {
+    font-family: Ubuntu-L;
+    src: url('../fonts/ubuntu/Ubuntu-L.ttf');
+}
+@font-face {
+    font-family: Ubuntu-M;
+    src: url('../fonts/ubuntu/Ubuntu-M.ttf');
+}*/
+@font-face {
+    font-family: Ubuntu-R;
+    src: url('../fonts/ubuntu/Ubuntu-R.ttf');
+}
+/*@font-face {
+    font-family: UbuntuMono-B;
+    src: url('../fonts/ubuntu/UbuntuMono-B.ttf');
+}*/
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Raleway*/
+
+/*@font-face {
+    font-family: Raleway-Medium;
+    src: url('../fonts/raleway/Raleway-Medium.ttf');
+}
+@font-face {
+    font-family: Raleway-Black;
+    src: url('../fonts/raleway/Raleway-Black.ttf');
+}
+@font-face {
+    font-family: Raleway-Light;
+    src: url('../fonts/raleway/Raleway-Light.ttf');
+}
+@font-face {
+    font-family: Raleway-ExtraBold;
+    src: url('../fonts/raleway/Raleway-ExtraBold.ttf');
+}*/
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*PT-sans*/
+
+/*@font-face {
+    font-family: PT-1;
+    src: url('../fonts/pt-sans/PTC55f.ttf');
+}
+@font-face {
+    font-family: PT-2;
+    src: url('../fonts/pt-sans/PTN57F.ttf');
+}
+@font-face {
+    font-family: PT-3;
+    src: url('../fonts/pt-sans/PTS55G.ttf');
+}
+@font-face {
+    font-family: PT-4;
+    src: url('../fonts/pt-sans/PTS75F.ttf');
+}*/
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Open-sans*/
+
+/*@font-face {
+    font-family: OpenSans-Bold;
+    src: url('../fonts/open-sans/OpenSans-Bold.ttf');
+}*/
+/*@font-face {
+    font-family: OpenSans-Regular;
+    src: url('../fonts/open-sans/OpenSans-Regular.ttf');
+}*/
+/*@font-face {
+    font-family: OpenSans-Light;
+    src: url('../fonts/open-sans/OpenSans-Light.ttf');
+}*/
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Lato*/
+
+/*@font-face {
+    font-family: Lato-Regular;
+    src: url('../fonts/lato/Lato-Regular.ttf');
+}
+@font-face {
+    font-family: Lato-Light;
+    src: url('../fonts/lato/Lato-Light.ttf');
+}
+@font-face {
+    font-family: Lato-Heavy;
+    src: url('../fonts/lato/Lato-Heavy.ttf');
+}*/
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Helvetica*/
+
+/*@font-face {
+    font-family: Helvetica;
+    src: url('../fonts/lato/Helvetica.oft');
+}*/
