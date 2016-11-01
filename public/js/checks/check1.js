@@ -1,10 +1,6 @@
 //shopper country is high risk
 
-var test = [];
-
 var check1 = function(data,cb){
-
-	console.log(data);
 
 	var shoppercountrycodes = {};
 	var differentCountries = [];
@@ -70,11 +66,7 @@ var check1 = function(data,cb){
 		}
 
 	}
-
-	console.log(shoppercountrycodes);
-	console.log(data);
-	test = data;
-
+	
 	if(typeof cb === 'function'){
 		console.log('check 1 - DONE');
 		cb();
