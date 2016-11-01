@@ -13,9 +13,21 @@ var init = function(cb){
 
 			check3(data,function(){
 
-				if(typeof cb === 'function'){
-					cb(data);
-				}
+				check4(data,function(){
+
+					check5(data,function(){
+
+						check6(data,function(){
+
+							if(typeof cb === 'function'){
+								cb(data);
+							}
+
+						});
+						
+					});
+
+				});
 
 			});
 

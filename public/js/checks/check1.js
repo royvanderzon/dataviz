@@ -58,7 +58,8 @@ var check1 = function(data,cb){
 
 				// console.log(data[i].shoppercountrycode)
 				data[i].checks = {};
-				data[i].checks.check1 = shoppercountrycodes[differentCountries[ii]].risk;
+				data[i].checks.check1 = {};
+				data[i].checks.check1.points = shoppercountrycodes[differentCountries[ii]].risk;
 				// data[i].checks.check1 = 1;
 
 			}
@@ -66,7 +67,10 @@ var check1 = function(data,cb){
 		}
 
 	}
-	
+
+	datavis.data.countries.stats = shoppercountrycodes;
+	datavis.data.countries.list = differentCountries;
+
 	if(typeof cb === 'function'){
 		console.log('check 1 - DONE');
 		cb();
