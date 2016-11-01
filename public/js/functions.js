@@ -10,8 +10,15 @@ var datavis = {
 			},
 			check1Factor : 1, //percentage factor
 			check2 : {
-				unknown : 10,
-				different : 5
+				unknown : 20, //point -
+				different : 10 //point -
+			},
+			check3 : function(times){
+				if(times < 2){
+					return 0;
+				}else{
+					return 20;
+				}
 			}
 		}
 	}
