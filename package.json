@@ -1,7 +1,7 @@
 {
-  "name": "adyen",
+  "name": "dataviz",
   "version": "0.0.1",
-  "description": "adyen",
+  "description": "School project for Adyen",
   "private": true,
   "main": "app.js",
   "directories": {
@@ -22,7 +22,13 @@
     "fast-csv" : "2.3.0",
     "nodemon" : "1.11.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1"
+  },
   "scripts": {
     "start": "node app.js"
   },

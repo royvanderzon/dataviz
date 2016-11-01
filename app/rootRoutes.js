@@ -19,9 +19,9 @@ var csvStream = csv({headers: true})
     .on("end", function(){
          console.log("done");
     });
- 
+
 var getData = function(){
- 	
+
  	var headers = [];
 
 	stream.pipe(csvStream);
@@ -31,7 +31,7 @@ var getData = function(){
 getData();
 
 module.exports = function(app) {
- 
+
     app.get('/', functions.check, function(req, res) {
 
     	res.render('home/index',{
@@ -40,6 +40,10 @@ module.exports = function(app) {
 
     	// res.json(functions.data.raw);
 
-    });
+  app.get('/', functions.check, function(req, res) {
+
+    res.render('home/index');
+
+  });
 
 }
