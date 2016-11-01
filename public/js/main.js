@@ -11,9 +11,13 @@ var init = function(cb){
 
 		check2(data,function(){
 
-			if(typeof cb === 'function'){
-				cb(data);
-			}
+			check3(data,function(){
+
+				if(typeof cb === 'function'){
+					cb(data);
+				}
+
+			});
 
 		});
 
