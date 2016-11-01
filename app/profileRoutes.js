@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.get('/', functions.check, function(req, res) {
 
-    res.send(functions.hello() + ' - Profile');
+    res.send('Profile');
 
 });
 

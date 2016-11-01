@@ -1,26 +1,36 @@
 {
-    "name": "adyen",
-    "version": "0.0.1",
-    "description": "adyen",
-    "private": true,
-    "main": "app.js",
-    "directories": {
-        "test": "test"
-    },
-    "dependencies": {
-        "body-parser": "~1.10.0",
-        "ejs": "~0.8.5",
-        "express": "~4.9.0",
-        "express-session": "~1.9.3",
-        "connect-flash": "~0.1.1",
-        "morgan": "~1.0.0",
-        "cookie-parser": "~1.0.0",
-        "multer": "1.2.0",
-        "path": "0.12.7"
-    },
-    "devDependencies": {},
-    "scripts" : { "start" : "node app.js" },
-    "keywords": ["scripting", "nodejs","adyen"],
-    "author": "Widesi",
-    "license": "MIT"
+  "name": "adyen",
+  "version": "0.0.1",
+  "description": "adyen",
+  "private": true,
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "~1.10.0",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "ejs": "~0.8.5",
+    "express": "~4.9.0",
+    "express-session": "~1.9.3",
+    "file-system": "^2.2.1",
+    "morgan": "~1.0.0",
+    "multer": "1.2.0",
+    "path": "0.12.7",
+    "file-system": "2.2.1",
+    "fast-csv" : "2.3.0",
+    "nodemon" : "1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "scripting",
+    "nodejs",
+    "adyen"
+  ],
+  "author": "Widesi",
+  "license": "MIT"
 }
