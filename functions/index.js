@@ -1,4 +1,4 @@
-const functions = {
+var functions = {
 	check : function(req, res, next){
 		console.log('Page loading!');
 		return next();

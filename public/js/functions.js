@@ -1,4 +1,4 @@
-const datavis = {
+var datavis = {
 	data : {
 		raw : []
 	}

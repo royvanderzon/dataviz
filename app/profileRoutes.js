@@ -1,13 +1,15 @@
-const express = require('express');
-// const mongoose = require('mongoose');
-const multer = require('multer');
-const path = require('path');
-const functions = require('../functions');
+var express = require('express');
+// var mongoose = require('mongoose');
+var multer = require('multer');
+var path = require('path');
+var functions = require('../functions');
 
-const router = express.Router();
+var router = express.Router();
 
-router.get('/', functions.check, (req, res) => {
-  res.send('Profile');
+router.get('/', functions.check, function(req, res) {
+
+    res.send('Profile');
+
 });
 
 module.exports = router;

@@ -1,4 +1,4 @@
-creationdate,amount,currencycode,issuercountrycode,shoppercountrycode,bin,displayabletxconstiantcode,accountcode,fraud,email_id,card_id,ip_id,txid
+creationdate,amount,currencycode,issuercountrycode,shoppercountrycode,bin,displayabletxvariantcode,accountcode,fraud,email_id,card_id,ip_id,txid
 2016-10-04 11:46:34,143.99,BRL,BR,,,other,company2,0,email2105,card2406,(unknown),1
 2016-10-02 02:18:07,224.91,BRL,BR,BR,539029,mc,company2,0,email1267,card1971,ip849,2
 2016-10-02 05:26:00,250.42,BRL,BR,BR,377169,other,company2,0,email697,card243,ip604,3
