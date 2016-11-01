@@ -29,12 +29,10 @@
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapeOne">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -42,8 +40,7 @@
                 </button>
                 <a class="navbar-brand" href="#">Start Bootstrap</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="navbarCollapeOne">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="#">About</a>
@@ -56,37 +53,35 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 
-    <!-- Page Content -->
     <div class="container">
-
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1>A Bootstrap Starter Template</h1>
-                <p class="lead">Complete with pre-defined file paths that you won't have to change!</p>
-                <ul class="list-unstyled">
-                    <li>Bootstrap v3.3.6</li>
-                    <li>jQuery v1.11.1</li>
-                </ul>
+                <h1>ADYEN</h1>
+                <hr>
+                <p>Thinggsssss with data.</p>
             </div>
         </div>
-        <!-- /.row -->
-
     </div>
-    <!-- /.container -->
 
     <!-- SCRIPTS -->
     <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/main.js"></script>
 
-    <script>
-        var data = <%- data %>;
-    </script>
+    <!-- FUNCTIONS -->
+    <script src="/js/functions.js"></script>
+
+    <!-- RAW DATA -->
+    <script>datavis.data.raw = <%- data %>;</script>
+    
+    <!-- CHEKCS -->
+    <script src="/js/checks/check1.js"></script>
+    <script src="/js/checks/check2.js"></script>
+
+    <!-- MAIN -->
+    <script src="/js/main.js"></script>
 
 </body>
 

@@ -1,0 +1,5 @@
+var datavis = {
+	data : {
+		raw : []
+	}
+}
