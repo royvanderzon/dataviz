@@ -24,3 +24,23 @@ svg {
 .tick line {
   visibility: hidden;
 }
+
+#intro {
+  margin-bottom: 3em;
+}
+
+#checkbox,
+#countrybox {
+  margin-top: 5em;
+  margin-left: 3.5em;
+}
+
+#searchbox,
+#savebox {
+  margin-top: 9em;
+  margin-left: 3em;
+}
+
+.addgraph {
+  margin-top: 2.4em;
+}

@@ -38,9 +38,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">Welcome back..</a>
             </div>
-            <div class="collapse navbar-collapse" id="navbarCollapeOne">
+            <!-- <div class="collapse navbar-collapse" id="navbarCollapeOne">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="#">About</a>
@@ -52,14 +52,13 @@
                         <a href="#">Contact</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1>ADYEN</h1>
                 <hr>
                 <div class="btn btn-primary loadOne">LOAD TEST 1</div>
                 <div class="btn btn-primary loadTwo">LOAD TEST 2</div>
@@ -67,10 +66,72 @@
                 <hr>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-xs-12 col-sm-8 col-md-6" id="insertGraph"></div>
+            <div class="col-xs-12 col-sm-6 col-md-6" id="intro">
+              <h1>Detecting fraud</h1>
+              <p>
+                In the following graph you can see what transactions were considered
+                a fraud. Select a ‘check’ to get more information about a check and
+                to filter it to that check. You can select countries, or search for
+                a specific email to filter even further. Use the savestates to load
+                your previous filters and the empty graph fields below to lock your
+                graph for comparison.
+              </p>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-2" id="checkbox">
+              <select>
+                  <option value="option1">High risk country</option>
+                  <option value="option2">option2</option>
+              </select>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-2" id="countrybox">
+              <select>
+                  <option value="option1">Alabama</option>
+                  <option value="option2">option2</option>
+              </select>
+            </div>
         </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-6" id="insertGraph">
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-2" id="searchbox">
+              <input id="mysearch" type="search" />
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-2" id="savebox">
+              <img src="http://placehold.it/180x220">
+            </div>
+        </div>
+
+        <div class="row">
+          <div id="addbox">
+            <div class="col-xs-12 col-sm-6 col-md-6 addgraph">
+              <img src="http://placehold.it/550x550">
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 addgraph">
+              <img src="http://placehold.it/550x550">
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 addgraph">
+              <img src="http://placehold.it/550x550">
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 addgraph">
+              <img src="http://placehold.it/550x550">
+            </div>
+          </div>
+
+        </div>
+
+
+
+
     </div>
+
+
 
     <!-- SCRIPTS -->
     <script src="/js/jquery.js"></script>
@@ -82,7 +143,7 @@
 
     <!-- RAW DATA -->
     <script>datavis.data.raw = <%- data %>;</script>
-    
+
     <!-- CHEKCS -->
     <script src="/js/checks/check1.js"></script>
     <script src="/js/checks/check2.js"></script>
