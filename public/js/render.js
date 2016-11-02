@@ -1,110 +1,110 @@
 // EXAMPLES
 var data1 = [{
-	State: 'Check 1',
+	State: '1',
 	alert: '5234',
 	denied: '2300',
 	lost: '404'
 }, {
-	State: 'Check 2',
+	State: '2',
 	alert: '2505',
 	denied: '2004',
 	lost: '403'
 }, {
-	State: 'Check 3',
+	State: '3',
 	alert: '1250',
 	denied: '1200',
 	lost: '140'
 }, {
-	State: 'Check 4',
+	State: '4',
 	alert: '4250',
 	denied: '3200',
 	lost: '240'
 }, {
-	State: 'Check 5',
+	State: '5',
 	alert: '5250',
 	denied: '4200',
 	lost: '1340'
 }, {
-	State: 'Check 6',
+	State: '6',
 	alert: '5250',
 	denied: '4200',
 	lost: '1340'
 }];
 
 var data2 = [{
-	State: 'Check 1',
+	State: '1',
 	alert: '250',
 	denied: '200',
 	lost: '40'
 }, {
-	State: 'Check 2',
+	State: '2',
 	alert: '250',
 	denied: '200',
 	lost: '40'
 }, {
-	State: 'Check 3',
+	State: '3',
 	alert: '250',
 	denied: '200',
 	lost: '40'
 }, {
-	State: 'Check 4',
+	State: '4',
 	alert: '250',
 	denied: '200',
 	lost: '40'
 }, {
-	State: 'Check 5',
+	State: '5',
 	alert: '250',
 	denied: '200',
 	lost: '40'
 }];
 
 var data3 = [{
-	State: 'Check 1',
+	State: '1',
 	alert: '5234',
 	denied: '2300',
 	lost: '404'
 }, {
-	State: 'Check 2',
+	State: '2',
 	alert: '2505',
 	denied: '2004',
 	lost: '403'
 }, {
-	State: 'Check 3',
+	State: '3',
 	alert: '1250',
 	denied: '1200',
 	lost: '140'
 }, {
-	State: 'Check 4',
+	State: '4',
 	alert: '4250',
 	denied: '3200',
 	lost: '240'
 }, {
-	State: 'Check 5',
+	State: '5',
 	alert: '5250',
 	denied: '4200',
 	lost: '1340'
 }, {
-	State: 'Check 6',
+	State: '6',
 	alert: '5250',
 	denied: '4200',
 	lost: '1340'
 }, {
-	State: 'Check 7',
+	State: '7',
 	alert: '5250',
 	denied: '4200',
 	lost: '1340'
 }, {
-	State: 'Check 8',
+	State: '8',
 	alert: '5250',
 	denied: '4200',
 	lost: '1340'
 }, {
-	State: 'Check 9',
+	State: '9',
 	alert: '15250',
 	denied: '4200',
 	lost: '1340'
 }, {
-	State: 'Check 10',
+	State: '10',
 	alert: '5250',
 	denied: '4200',
 	lost: '1340'
@@ -116,10 +116,10 @@ var margin = {
 		top: 20,
 		right: 20,
 		bottom: 30,
-		left: 40
+		left: 80
 	},
-	width = 960 - margin.left - margin.right,
-	height = 500 - margin.top - margin.bottom;
+	width = 480 - margin.left - margin.right,
+	height = 370 - margin.top - margin.bottom;
 
 var x0 = d3.scale.ordinal()
 	.rangeRoundBands([0, width], .1);
@@ -130,7 +130,7 @@ var y = d3.scale.linear()
 	.range([height, 0]);
 
 var color = d3.scale.ordinal()
-	.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+	.range(["#683D3D", "#955757", "#C97979"]);
 
 var xAxis = d3.svg.axis()
 	.scale(x0)
@@ -139,7 +139,7 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
 	.scale(y)
 	.orient("left")
-	.tickFormat(d3.format(".2s"));
+	.ticks("1")
 
 var svg = d3.select("#insertGraph").append("svg")
 	.attr("width", width + margin.left + margin.right)
@@ -226,31 +226,6 @@ var load = function(data) {
 			return color(d.name);
 		});
 
-	var legend = svg.selectAll(".legend").remove();
-	var legend = svg.selectAll(".legend")
-		.data(ageNames.slice().reverse())
-		.enter().append("g")
-		.attr("class", "legend")
-		.attr("transform", function(d, i) {
-			return "translate(0," + i * 20 + ")";
-		});
-
-	legend.select("rect").remove();
-	legend.append("rect")
-		.attr("x", width - 18)
-		.attr("width", 18)
-		.attr("height", 18)
-		.style("fill", color);
-
-	legend.select("text").remove();
-	legend.append("text")
-		.attr("x", width - 24)
-		.attr("y", 9)
-		.attr("dy", ".35em")
-		.style("text-anchor", "end")
-		.text(function(d) {
-			return d;
-		});
 
 	//clear data
 	for (var i = 0; i < data.length; i++) {

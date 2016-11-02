@@ -1,6 +1,46 @@
-body{
+body {
   padding-top: 70px;
 }
-*{
+* {
   font-family: 'Ubuntu-R';
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke-width: 1.5px;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis {
+  stroke-opacity: .8;
+}
+
+svg {
+  font: 10px sans-serif;
+}
+
+.tick line {
+  visibility: hidden;
+}
+
+#intro {
+  margin-bottom: 3em;
+}
+
+#checkbox,
+#countrybox {
+  margin-top: 5em;
+  margin-left: 3.5em;
+}
+
+#searchbox,
+#savebox {
+  margin-top: 9em;
+  margin-left: 3em;
+}
+
+.addgraph {
+  margin-top: 2.4em;
 }
