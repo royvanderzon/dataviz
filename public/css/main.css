@@ -1,26 +1,6 @@
-body {
+body{
   padding-top: 70px;
 }
-* {
+*{
   font-family: 'Ubuntu-R';
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke-width: 1.5px;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis {
-  stroke-opacity: .8;
-}
-
-svg {
-  font: 10px sans-serif;
-}
-
-.tick line {
-  visibility: hidden;
 }
