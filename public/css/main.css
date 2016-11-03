@@ -55,6 +55,9 @@ ul.list-group.addCountries {
   text-align: center;
   cursor: pointer;
   border-radius: 1em;
+  -webkit-box-shadow: 5px 5px 0px -1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 5px 5px 0px -1px rgba(0,0,0,0.15);
+  box-shadow: 5px 5px 0px -1px rgba(0,0,0,0.15);
 }
 
 .graphcontainer {
@@ -62,7 +65,7 @@ ul.list-group.addCountries {
 }
 
 .addgraph:hover {
-  background: #222;
+  opacity: .6;
 }
 
 .addgraph p {
