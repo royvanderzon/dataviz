@@ -1,6 +1,7 @@
 body {
   padding-top: 70px;
 }
+
 * {
   font-family: 'Ubuntu-R';
 }
@@ -13,8 +14,7 @@ body {
   color: #6b6666;
 }
 
-.axis path,
-.axis line {
+.axis path, .axis line {
   fill: none;
   stroke-width: 1.5px;
   stroke: #000;
@@ -32,38 +32,30 @@ svg {
 .tick line {
   visibility: hidden;
 }
-.fullWidth{
-  width: 100%!important;
+
+.fullWidth {
+width: 100%!important;
 }
 
 ul.maxUlHeight {
-    max-height: 200px;
-    overflow-y: auto;
-    height: 200px;
-    margin-bottom: 0px;
+max-height: 200px;
+overflow-y: auto;
+height: 200px;
+margin-bottom: 0px;
+background: #F1F1F1;
 }
-.removeButton{
+
+.removeButton, .cursor {
   cursor: pointer;
 }
 
 .navbar-brand {
   padding: 5px 15px;
 }
+
 .navbar-brand img {
   width: auto;
   max-height: 100%;
-}
-
-.list-group-item>.badge {
-  float: right;
-  cursor: pointer;
-}
-
-ul.list-group.addCountries {
-  max-height: 200px;
-  overflow-y: auto;
-  height: 200px;
-  margin-bottom: 0px;
 }
 
 .addgraph {
@@ -73,9 +65,9 @@ ul.list-group.addCountries {
   text-align: center;
   cursor: pointer;
   border-radius: 1em;
-  -webkit-box-shadow: 5px 5px 0px -1px rgba(0,0,0,0.15);
-  -moz-box-shadow: 5px 5px 0px -1px rgba(0,0,0,0.15);
-  box-shadow: 5px 5px 0px -1px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 5px 5px 0px -1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 5px 5px 0px -1px rgba(0, 0, 0, 0.15);
+  box-shadow: 5px 5px 0px -1px rgba(0, 0, 0, 0.15);
 }
 
 .graphcontainer {
@@ -96,9 +88,39 @@ ul.list-group.addCountries {
   margin-top: 13em;
 }
 
-.addCountries {
-  background: #F1F1F1;
+.saveState {
+  position: absolute;
+  right: 22px;
+  top: -5px;
+  cursor: pointer;
+  display: none;
 }
+
+.saveState i {
+  border-radius: 100%;
+  background-color: #ccc;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 42px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.35);
+  padding-left: 4px;
+  transition: 200ms all ease-in;
+}
+
+.saveState:hover i {
+  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.65);
+}
+
+.graphContainer:hover .saveState {
+  display: block;
+}
+
+.delCheck {
+  cursor: pointer;
+}
+
 
 /*#intro {
   margin-bottom: 3em;
@@ -106,17 +128,17 @@ ul.list-group.addCountries {
 
 #checkbox,
 #countrybox {
-  margin-top: 5em;
-  margin-left: 3.5em;
+margin-top: 5em;
+margin-left: 3.5em;
 }
 
 #searchbox,
 #savebox {
-  margin-top: 9em;
-  margin-left: 3em;
+margin-top: 9em;
+margin-left: 3em;
 }
 
 .addgraph {
-  margin-top: 2.4em;
+margin-top: 2.4em;
 }
 */

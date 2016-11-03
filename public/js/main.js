@@ -56,6 +56,9 @@ init(function(data){
 	handleLangSelect();
 	handleChecks();
 
+	//init savestates
+	refreshSaveList();
+
 });
 
 var refresh = function(){

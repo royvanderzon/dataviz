@@ -105,3 +105,36 @@ var datavis = {
 		}
 	}
 }
+
+var setLocal = function(data){
+	localStorage.setItem('savedStates',JSON.stringify(data));
+}
+
+var getLocal = function(){
+	var get = localStorage.getItem('savedStates');
+	var parseGet = JSON.parse(get);
+	return parseGet;
+}
+
+var saved = JSON.parse(localStorage.getItem('savedStates'));
+if(saved === null){
+	var saveStates = [];
+	setLocal(saveStates);
+}
+
+var addCounter = function(){
+	var counter = Number(localStorage.getItem('counter'));
+	counter++;
+	localStorage.setItem('counter',counter);
+}
+
+var getCounter = function(){
+	return Number(localStorage.getItem('counter'));
+}
+
+var stateCounter = JSON.parse(localStorage.getItem('counter'));
+if(stateCounter === null){
+	var counter = 0;
+	localStorage.setItem('counter',counter);
+}
+
