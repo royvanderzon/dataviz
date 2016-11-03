@@ -168,14 +168,36 @@ $(document).ready(function(){
 
 	});
 
+	$( ".saveStateList" ).on( "click", ".delSaveState", function(){
+
+		var thisID = $(this).parent().attr('data-type');
+		var saveStates = getLocal();
+
+		console.log(thisID)
+		console.log(saveStates)
+
+		for(var i = 0;i<saveStates.length;i++){
+			console.log(saveStates[i])
+			if(saveStates[i].id == thisID){
+				saveStates.splice(i,1);
+				setLocal(saveStates);
+				refreshSaveList();
+				break;
+			}
+		}
+
+	});
+
 });
 
 var refreshSaveList = function(){
 
 	var saveStates = getLocal();
 	var html = '';
-	for(var i = 0;i<saveStates.length;i++){
-		html += '<li class="list-group-item" data-type="'+saveStates[i].id+'"><strong>'+saveStates[i].id+'</strong> - '+saveStates[i].name+'<span class="badge cursor">&times;</span><span class="badge cursor loadState"><i class="fa fa-arrow-left"></i></span></li>';
+	saveStates.sort();
+	// for(var i = 0;i<saveStates.length;i++){
+	for(var i = saveStates.length-1;i>-1;i--){
+		html += '<li class="list-group-item" data-type="'+saveStates[i].id+'"><strong>'+saveStates[i].id+'</strong> - '+saveStates[i].name+'<span class="badge cursor delSaveState">&times;</span><span class="badge cursor loadState"><i class="fa fa-arrow-left"></i></span></li>';
 	}
 	$('.saveStateList').html();
 	$('.saveStateList').html(html);
