@@ -28,6 +28,15 @@ svg {
   width: 100%!important;
 }
 
+<<<<<<< HEAD
+.navbar-brand {
+  padding: 5px 15px;
+}
+.navbar-brand img {
+  width: auto;
+  max-height: 100%;
+}
+
 ul.list-group.addCountries {
     max-height: 200px;
     overflow-y: auto;
@@ -56,7 +65,6 @@ ul.list-group.addCountries {
 .addcross {
   width: 3em;
   margin-top: 13em;
-}
 
 /*#intro {
   margin-bottom: 3em;
