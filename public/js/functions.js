@@ -21,16 +21,17 @@ var datavis = {
 			},
 			check1Factor : 1, //percentage factor
 			check2 : {
-				unknown : 20, //point -
+				unknown : 10, //point -
 				different : 10 //point -
 			},
 			check3 : function(times){
 				if(times < 2){
 					return 0;
 				}else{
-					return 20;
+					return datavis.drempels.checks.check3Points;
 				}
 			},
+			check3Points : 20,
 			check5 : 35,
 			check6 : 35
 		}
