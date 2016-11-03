@@ -1,10 +1,13 @@
 var handleLangSelect = function(){
 	var html = '';
 	datavis.data.countries.list.sort();
-	datavis.data.countries.list.unshift('ALL COUNTRIES')
+	datavis.data.countries.list.unshift('ALL COUNTRIES');
 	for(var i = 0;i<datavis.data.countries.list.length;i++){
 		if(datavis.data.countries.list[i] != ''){
-			html += '<option value="'+datavis.data.countries.list[i]+'">'+datavis.data.countries.list[i]+'</option>';
+			var ISOCountryCode = datavis.data.countries.list[i];
+			var fullCountryName = getCountryName(ISOCountryCode);
+
+			html += '<option value="'+ISOCountryCode+'">'+fullCountryName+'</option>';
 		}
 	}
 
