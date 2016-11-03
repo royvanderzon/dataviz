@@ -24,7 +24,7 @@ var init = function(cb){
 							}
 
 						});
-						
+
 					});
 
 				});
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
 	$('.loadReal').click(function(){
 		load(load(formData(datavis.data.merged)));
-	})	
+	})
 
 	$('.loadOne').click(function(){
 		load(data1);
@@ -69,3 +69,11 @@ $(document).ready(function(){
 	})
 
 })
+
+// add graphs on click
+
+$('.addgraph').each(function() {
+	$('.addgraph').on('click', function() {
+		 $(this).replaceWith($('#insertGraph').clone());
+	});
+});
