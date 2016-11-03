@@ -36,11 +36,16 @@ svg {
   max-height: 100%;
 }
 
+.list-group-item>.badge {
+  float: right;
+  cursor: pointer;
+}
+
 ul.list-group.addCountries {
-    max-height: 200px;
-    overflow-y: auto;
-    height: 200px;
-    margin-bottom: 0px;
+  max-height: 200px;
+  overflow-y: auto;
+  height: 200px;
+  margin-bottom: 0px;
 }
 
 .addgraph {
