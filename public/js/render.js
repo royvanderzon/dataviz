@@ -220,7 +220,7 @@ var load = function(data) {
 			return y(d.value);
 		})
 		.attr("height", function(d) {
-			return height - y(d.value);
+			return height-9 - y(d.value);
 		})
 		.style("fill", function(d) {
 			return color(d.name);
