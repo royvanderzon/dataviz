@@ -5,7 +5,8 @@ var datavis = {
 			stats : {}
 		},
 		cardNumbersWithEmails : [],
-		raw : []
+		raw : [],
+		merged : []
 	},
 	drempels : {
 		denied : 100,

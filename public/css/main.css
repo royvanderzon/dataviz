@@ -24,6 +24,9 @@ svg {
 .tick line {
   visibility: hidden;
 }
+.fullWidth{
+  width: 100%!important;
+}
 
 /*#intro {
   margin-bottom: 3em;

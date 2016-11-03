@@ -40,31 +40,21 @@ var init = function(cb){
 
 init(function(data){
 	console.log('All checks - DONE');
-	// console.table(data);
-	// console.log(data);
 
-	// console.log(formData(data));
-	// formData(data);
+	//load in some data!!
+	datavis.data.merged = data;
+	load(formData(datavis.data.merged));
 
-	//load in some testdata!!
-	// load(data1);
-
-	load(formData(data));
-
-	var html = '';
-	datavis.data.countries.list.sort();
-	for(var i = 0;i<datavis.data.countries.list.length;i++){
-		if(datavis.data.countries.list[i] != ''){
-			html += '<option>'+datavis.data.countries.list[i]+'</option>';
-		}
-	}
-
-	$('#selectCountries').html(html);
-	$('#selectCountries').selectpicker('refresh');
+	//handle select boxes
+	handleLangSelect();
 
 });
 
 $(document).ready(function(){
+
+	$('.loadReal').click(function(){
+		load(load(formData(datavis.data.merged)));
+	})	
 
 	$('.loadOne').click(function(){
 		load(data1);
