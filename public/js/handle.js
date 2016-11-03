@@ -50,7 +50,10 @@ $(document).ready(function(){
 
 		var html = '';
 		for(var i = 0;i<datavis.loadOptions.langs.length;i++){
-			html += '<li class="list-group-item">'+datavis.loadOptions.langs[i]+' <span class="badge delCountry removeButton" data-type="'+datavis.loadOptions.langs[i]+'">&times;</span></li>'
+			var ISOCountryCode = datavis.loadOptions.langs[i];
+			var fullCountryName = getCountryName(ISOCountryCode);
+
+			html += '<li class="list-group-item">'+fullCountryName+' <span class="badge delCountry removeButton" data-type="'+datavis.loadOptions.langs[i]+'">&times;</span></li>'
 		}
 		$('.addCountries').html(html);
 		refresh();
@@ -100,6 +103,6 @@ $(document).ready(function(){
 		}
 		refresh();
 	} );
-	
+
 
 });
