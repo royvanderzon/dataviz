@@ -9,7 +9,7 @@ var handleChecks = function(){
 			html += '<option value="'+datavis.data.checksList[i]+'">'+datavis.data.checksList[i]+'</option>';
 		}
 	}
-	// console.log(html)
+
 	$('#selectChecks').html(html);
 	$('#selectChecks').selectpicker('refresh');
 }
