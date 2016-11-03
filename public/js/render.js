@@ -3,111 +3,111 @@ var data1 = [{
 	State: '1',
 	alert: '5234',
 	denied: '2300',
-	lost: '404'
+	fraud: '404'
 }, {
 	State: '2',
 	alert: '2505',
 	denied: '2004',
-	lost: '403'
+	fraud: '403'
 }, {
 	State: '3',
 	alert: '1250',
 	denied: '1200',
-	lost: '140'
+	fraud: '140'
 }, {
 	State: '4',
 	alert: '4250',
 	denied: '3200',
-	lost: '240'
+	fraud: '240'
 }, {
 	State: '5',
 	alert: '5250',
 	denied: '4200',
-	lost: '1340'
+	fraud: '1340'
 }, {
 	State: '6',
 	alert: '5250',
 	denied: '4200',
-	lost: '1340'
+	fraud: '1340'
 }];
 
 var data2 = [{
 	State: '1',
 	alert: '250',
 	denied: '200',
-	lost: '40'
+	fraud: '40'
 }, {
 	State: '2',
 	alert: '250',
 	denied: '200',
-	lost: '40'
+	fraud: '40'
 }, {
 	State: '3',
 	alert: '250',
 	denied: '200',
-	lost: '40'
+	fraud: '40'
 }, {
 	State: '4',
 	alert: '250',
 	denied: '200',
-	lost: '40'
+	fraud: '40'
 }, {
 	State: '5',
 	alert: '250',
 	denied: '200',
-	lost: '40'
+	fraud: '40'
 }];
 
 var data3 = [{
 	State: '1',
 	alert: '5234',
 	denied: '2300',
-	lost: '404'
+	fraud: '404'
 }, {
 	State: '2',
 	alert: '2505',
 	denied: '2004',
-	lost: '403'
+	fraud: '403'
 }, {
 	State: '3',
 	alert: '1250',
 	denied: '1200',
-	lost: '140'
+	fraud: '140'
 }, {
 	State: '4',
 	alert: '4250',
 	denied: '3200',
-	lost: '240'
+	fraud: '240'
 }, {
 	State: '5',
 	alert: '5250',
 	denied: '4200',
-	lost: '1340'
+	fraud: '1340'
 }, {
 	State: '6',
 	alert: '5250',
 	denied: '4200',
-	lost: '1340'
+	fraud: '1340'
 }, {
 	State: '7',
 	alert: '5250',
 	denied: '4200',
-	lost: '1340'
+	fraud: '1340'
 }, {
 	State: '8',
 	alert: '5250',
 	denied: '4200',
-	lost: '1340'
+	fraud: '1340'
 }, {
 	State: '9',
 	alert: '15250',
 	denied: '4200',
-	lost: '1340'
+	fraud: '1340'
 }, {
 	State: '10',
 	alert: '5250',
 	denied: '4200',
-	lost: '1340'
+	fraud: '1340'
 }];
 
 // RENDER
@@ -139,7 +139,7 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
 	.scale(y)
 	.orient("left")
-	.ticks("1")
+	.ticks("10")
 
 var svg = d3.select("#insertGraph").append("svg")
 	.attr("width", width + margin.left + margin.right)

@@ -38,16 +38,18 @@ var init = function(cb){
 
 }
 
-var test = [];
-
 init(function(data){
 	console.log('All checks - DONE');
 	// console.table(data);
-	console.log(data);
-	test = data;
+	// console.log(data);
+
+	// console.log(formData(data));
+	// formData(data);
 
 	//load in some testdata!!
-	load(data1);
+	// load(data1);
+
+	load(formData(data));
 
 });
 
