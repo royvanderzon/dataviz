@@ -51,6 +51,16 @@ init(function(data){
 
 	load(formData(data));
 
+	var html = '';
+	for(var i = 0;i<datavis.data.countries.list.length;i++){
+		if(datavis.data.countries.list[i] != ''){
+			html += '<option>'+datavis.data.countries.list[i]+'</option>';
+		}
+	}
+
+	$('#selectCountries').html(html);
+	$('#selectCountries').selectpicker('refresh');
+
 });
 
 $(document).ready(function(){

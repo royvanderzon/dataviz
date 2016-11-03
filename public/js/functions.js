@@ -4,6 +4,7 @@ var datavis = {
 			list: [],
 			stats : {}
 		},
+		cardNumbersWithEmails : [],
 		raw : []
 	},
 	drempels : {

@@ -74,6 +74,8 @@ var check3 = function(data,cb){
 
 	}
 
+	datavis.data.cardNumbersWithEmails = cardNumbersWithEmails;
+
 
 	// cardNumbersWithEmails.sort()
 	// console.log(cardNumbers);
