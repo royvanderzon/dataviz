@@ -39,11 +39,18 @@ var init = function(cb){
 }
 
 init(function(data){
+
 	console.log('All checks - DONE');
 
 	//load in some data!!
 	datavis.data.merged = data;
-	load(formData(datavis.data.merged));
+
+	//filter data
+	var filteredData = filterData(datavis.data.merged);
+
+	console.log(filteredData);
+
+	load(formData(filteredData));
 
 	//handle select boxes
 	handleLangSelect();
@@ -55,6 +62,33 @@ $(document).ready(function(){
 	$('.loadReal').click(function(){
 		load(load(formData(datavis.data.merged)));
 	})
+
+
+		//set languages
+		datavis.loadOptions.langs = [];
+
+		//filter data
+		var filteredData = filterData(datavis.data.merged);
+
+		//load data
+		load(formData(filteredData));
+
+	})
+
+	$('.loadReal-NL').click(function(){
+
+		//set languages
+		datavis.loadOptions.langs = ['US'];
+
+		//filter data
+		var filteredData = filterData(datavis.data.merged);
+
+		console.log(formData(filteredData))
+
+		//load data
+		load(formData(filteredData));
+	})
+
 
 	$('.loadOne').click(function(){
 		load(data1);

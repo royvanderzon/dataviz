@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css" rel="stylesheet">
+    <link href="/css/bootstrap-select.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,7 +61,8 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <hr>
-                <div class="btn btn-primary loadReal">LOAD REAL DATA</div>
+                <div class="btn btn-primary loadReal">LOAD ALL REAL DATA</div>
+                <div class="btn btn-primary loadReal-NL">LOAD NL REAL DATA</div>
                 <div class="btn btn-primary loadOne">LOAD TEST 1</div>
                 <div class="btn btn-primary loadTwo">LOAD TEST 2</div>
                 <div class="btn btn-primary loadThree">LOAD TEST 3</div>
@@ -90,7 +91,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6 graphContainer">
                 <div id="insertGraph"></div>
             </div>
             <div class="col-sm-12 col-md-6">
@@ -188,12 +189,13 @@
     <!-- SCRIPTS -->
     <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="//d3js.org/d3.v3.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js"></script>
+    <script src="/js/d3.v3.min.js"></script>
+    <script src="/js/bootstrap-select.js"></script>
 
     <!-- FUNCTIONS -->
     <script src="/js/functions.js"></script>
     <script src="/js/formData.js"></script>
+    <script src="/js/filterData.js"></script>
 
     <!-- RAW DATA -->
     <script>datavis.data.raw = <%- data %>;</script>
