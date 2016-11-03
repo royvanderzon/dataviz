@@ -1,4 +1,7 @@
 var datavis = {
+	loadOptions : {
+		langs : []
+	},
 	data : {
 		countries : {
 			list: [],
@@ -9,7 +12,7 @@ var datavis = {
 		merged : []
 	},
 	drempels : {
-		denied : 100,
+		denied : 80,
 		checks : {
 			check1 : function(percent){
 				return Math.floor(percent * datavis.drempels.checks.check1Factor);
@@ -28,6 +31,35 @@ var datavis = {
 			},
 			check5 : 35,
 			check6 : 35
+		}
+	},
+	filters : {
+		filterLang : function(langs,data){
+
+			var newData = [];
+			if(langs.length < 1){
+				newData = data;
+			}else{
+				//langs = ['NL','CO','CA','US','DE'];
+
+				for(var i = 0;i<data.length;i++){
+
+					var found = false;
+					for(var ii = 0;ii<langs.length;ii++){
+						
+						if(data[i].shoppercountrycode == langs[ii]){
+							found = true;
+						}
+						
+					}
+					if(found){
+						newData.push(data[i]);
+					}
+
+				}
+
+			}
+			return newData;
 		}
 	}
 }

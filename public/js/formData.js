@@ -1,8 +1,7 @@
 var formData = function(data){
 
-	console.log(data);
-
-	console.log(data[0]);
+	// console.log(data);
+	// console.log(data[0]);
 
 	var target = data[0].checks;
 	var formedChecks = [];
@@ -11,8 +10,8 @@ var formData = function(data){
 	for (var iterationCheckKey in target){
 	    if (typeof target[iterationCheckKey] !== 'function') {
 
-	    	console.log('/////////////////////////////////////////////////');
-	        console.log("Key is " + iterationCheckKey + ", value is " + target[iterationCheckKey].points);
+	    	// console.log('/////////////////////////////////////////////////');
+	        // console.log("Key is " + iterationCheckKey + ", value is " + target[iterationCheckKey].points);
 
 	        //make check obj
 	        var obj = {};
@@ -46,7 +45,7 @@ var formData = function(data){
 					    }
 				    }
 
-				    if(thisTotalPoints > 80){
+				    if(thisTotalPoints > datavis.drempels.denied){
 				    	// console.log('Higheerrrr')
 				    	obj.denied++;
 				    }
@@ -60,7 +59,7 @@ var formData = function(data){
 	    }
 	}
 
-	console.log(formedChecks);
+	// console.log(formedChecks);
 
 	return formedChecks;
 }
