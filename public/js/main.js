@@ -24,7 +24,7 @@ var init = function(cb){
 							}
 
 						});
-						
+
 					});
 
 				});
@@ -60,6 +60,9 @@ init(function(data){
 $(document).ready(function(){
 
 	$('.loadReal').click(function(){
+		load(load(formData(datavis.data.merged)));
+	})
+
 
 		//set languages
 		datavis.loadOptions.langs = [];
@@ -70,7 +73,7 @@ $(document).ready(function(){
 		//load data
 		load(formData(filteredData));
 
-	})	
+	})
 
 	$('.loadReal-NL').click(function(){
 
@@ -84,7 +87,8 @@ $(document).ready(function(){
 
 		//load data
 		load(formData(filteredData));
-	})	
+	})
+
 
 	$('.loadOne').click(function(){
 		load(data1);
@@ -99,3 +103,11 @@ $(document).ready(function(){
 	})
 
 })
+
+// add graphs on click
+
+$('.addgraph').each(function() {
+	$('.addgraph').on('click', function() {
+		 $(this).replaceWith($('#insertGraph').clone());
+	});
+});
