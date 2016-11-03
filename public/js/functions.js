@@ -1,6 +1,7 @@
 var datavis = {
 	loadOptions : {
-		langs : []
+		langs : [],
+		checks : []
 	},
 	data : {
 		countries : {
@@ -9,7 +10,8 @@ var datavis = {
 		},
 		cardNumbersWithEmails : [],
 		raw : [],
-		merged : []
+		merged : [],
+		checksList : []
 	},
 	drempels : {
 		denied : 80,
@@ -60,6 +62,46 @@ var datavis = {
 
 			}
 			return newData;
+		},
+		filterCheck : function(checks,data){
+
+			//fout!
+
+			if(checks.length < 1){
+
+			}else{
+				
+				for(var i = 0;i<data.length;i++){
+
+					var target = data[i].checks;
+
+					for (var iterationCheckKey in target){
+					    if (typeof target[iterationCheckKey] !== 'function') {
+
+					    	var found = false;
+					    	for(var ii = 0;ii<checks.length;ii++){
+					    		// console.log(String(checks[ii]))
+					    		// console.log(target[iterationCheckKey])
+					    		if(String(checks[ii]) == String(iterationCheckKey)){
+					    			found = true;
+					    			// console.log('match')
+					    			break;
+					    		}
+					    	}
+
+					    	if(!found){
+					    		delete target[iterationCheckKey];
+					    	}
+
+					    }
+					}
+
+				}
+
+			}
+			console.log(checks);
+			console.log(data);
+			return data;
 		}
 	}
 }

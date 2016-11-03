@@ -21,6 +21,8 @@ var formData = function(data){
 	        obj.denied = 0;
 	        obj.fraud = 0;
 
+	        datavis.data.checksList.push(iterationCheckKey);
+
 	        //for this check get points of each transaction
 	        for(var i = 0;i<data.length;i++){
 
@@ -59,7 +61,23 @@ var formData = function(data){
 	    }
 	}
 
-	// console.log(formedChecks);
+	var thisChecks = datavis.loadOptions.checks;
+	var formedChecksFiltered = [];
 
-	return formedChecks;
+	if(thisChecks.length > 0){
+
+		for(var i = 0;i<formedChecks.length;i++){
+
+			for(var ii = 0;ii<thisChecks.length;ii++){
+				if(formedChecks[i].State == thisChecks[ii]){
+					formedChecksFiltered.push(formedChecks[i]);
+					break;
+				}
+			}
+		}
+	}else{
+		formedChecksFiltered = formedChecks;
+	}
+
+	return formedChecksFiltered;
 }

@@ -54,6 +54,7 @@ init(function(data){
 
 	//handle select boxes
 	handleLangSelect();
+	handleChecks();
 
 });
 
