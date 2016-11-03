@@ -28,6 +28,14 @@ svg {
   width: 100%!important;
 }
 
+.navbar-brand {
+  padding: 5px 15px;
+}
+.navbar-brand img {
+  width: auto;
+  max-height: 100%;
+}
+
 /*#intro {
   margin-bottom: 3em;
 }
