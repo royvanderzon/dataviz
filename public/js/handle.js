@@ -40,9 +40,16 @@ $(document).ready(function(){
 	var refreshCountrieSelect = function(){
 		$('.addCountries').html();
 		var html = '';
-		for(var i = 0;i<datavis.loadOptions.langs.length;i++){
-			html += '<li class="list-group-item">'+datavis.loadOptions.langs[i]+' <span class="badge delCountry removeButton" data-type="'+datavis.loadOptions.langs[i]+'">&times;</span></li>'
+
+
+		for(var i = datavis.loadOptions.langs.length-1;i>-1;i--){
+			var ISOCountryCode = datavis.loadOptions.langs[i];
+ 			var fullCountryName = getCountryName(ISOCountryCode);
+ 			html += '<li class="list-group-item">'+fullCountryName+' <span class="badge delCountry removeButton" data-type="'+datavis.loadOptions.langs[i]+'">&times;</span></li>'
+			// for(var i = 0;i<datavis.loadOptions.langs.length;i++){
+			// html += '<li class="list-group-item">'+datavis.loadOptions.langs[i]+' <span class="badge delCountry removeButton" data-type="'+datavis.loadOptions.langs[i]+'">&times;</span></li>'
 		}
+
 		$('.addCountries').html(html);
 	}
 
@@ -79,7 +86,8 @@ $(document).ready(function(){
 	var refreshChecksSelect = function(){
 		$('.addChecks').html();
 		var html = '';
-		for(var i = 0;i<datavis.loadOptions.checks.length;i++){
+		// for(var i = 0;i<datavis.loadOptions.checks.length;i++){
+		for(var i = datavis.loadOptions.checks.length-1;i>-1;i--){
 			html += '<li class="list-group-item">'+datavis.loadOptions.checks[i]+' <span class="badge removeButton delCheck" data-type="'+datavis.loadOptions.checks[i]+'">&times;</span></li>'
 		}
 		$('.addChecks').html(html);
