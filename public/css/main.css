@@ -57,7 +57,7 @@ ul.list-group.addCountries {
   border-radius: 1em;
 }
 
-.addgraph:last-child {
+.graphcontainer {
   margin-bottom: 4em;
 }
 
