@@ -1,3 +1,19 @@
+var handleChecks = function(){
+
+	var html = '';
+	datavis.data.checksList.sort();
+	datavis.data.checksList.unshift('ALL CHECKS')
+	for(var i = 0;i<datavis.data.checksList.length;i++){
+		console.log(datavis.data.checksList[i])
+		if(datavis.data.checksList[i] != ''){
+			html += '<option value="'+datavis.data.checksList[i]+'">'+datavis.data.checksList[i]+'</option>';
+		}
+	}
+	console.log(html)
+	$('#selectChecks').html(html);
+	$('#selectChecks').selectpicker('refresh');
+}
+
 var handleLangSelect = function(){
 	var html = '';
 	datavis.data.countries.list.sort();
@@ -17,9 +33,11 @@ var handleLangSelect = function(){
 
 $(document).ready(function(){
 
-	$('#selectCountries').on('change',function(){
-		console.log($(this).val());
+	///////////////////////////////////////////////////////
+	// ADD COUNTRIES
+	///////////////////////////////////////////////////////
 
+	$('#selectCountries').on('change',function(){
 		var found = (datavis.loadOptions.langs.indexOf($(this).val()) > -1);
 		if(!found){
 			datavis.loadOptions.langs.push($(this).val());
@@ -32,7 +50,7 @@ $(document).ready(function(){
 
 		var html = '';
 		for(var i = 0;i<datavis.loadOptions.langs.length;i++){
-			html += '<li class="list-group-item">'+datavis.loadOptions.langs[i]+' <span class="badge delCountry" data-type="'+datavis.loadOptions.langs[i]+'">&times;</span></li>'
+			html += '<li class="list-group-item">'+datavis.loadOptions.langs[i]+' <span class="badge delCountry removeButton" data-type="'+datavis.loadOptions.langs[i]+'">&times;</span></li>'
 		}
 		$('.addCountries').html(html);
 		refresh();
@@ -46,8 +64,42 @@ $(document).ready(function(){
 			}
 		}
 		refresh();
-	} )
+	} );
 
+	///////////////////////////////////////////////////////
+	// ADD CHECKS
+	///////////////////////////////////////////////////////
 
+	$('#selectChecks').on('change',function(){
+
+		console.log(datavis.loadOptions.checks)
+		var found = (datavis.loadOptions.checks.indexOf($(this).val()) > -1);
+		if(!found){
+			datavis.loadOptions.checks.push($(this).val());
+		}
+
+		if($(this).val() == 'ALL CHECKS'){
+			datavis.loadOptions.checks = [];
+			$(this).val('ALL CHECKS');
+		}
+
+		var html = '';
+		for(var i = 0;i<datavis.loadOptions.checks.length;i++){
+			html += '<li class="list-group-item">'+datavis.loadOptions.checks[i]+' <span class="badge removeButton delCheck" data-type="'+datavis.loadOptions.checks[i]+'">&times;</span></li>'
+		}
+		$('.addChecks').html(html);
+		refresh();
+	});
+
+	$( ".addChecks" ).on( "click", ".delCheck", function(){
+		$(this).parent().remove();
+		for(var i = 0;i<datavis.loadOptions.checks.length;i++){
+			if(datavis.loadOptions.checks[i] == $(this).attr('data-type')){
+				datavis.loadOptions.checks.splice(i,1)
+			}
+		}
+		refresh();
+	} );
+	
 
 });

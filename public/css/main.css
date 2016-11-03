@@ -36,6 +36,16 @@ svg {
   width: 100%!important;
 }
 
+ul.maxUlHeight {
+    max-height: 200px;
+    overflow-y: auto;
+    height: 200px;
+    margin-bottom: 0px;
+}
+.removeButton{
+  cursor: pointer;
+}
+
 .navbar-brand {
   padding: 5px 15px;
 }
