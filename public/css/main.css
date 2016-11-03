@@ -5,10 +5,18 @@ body {
   font-family: 'Ubuntu-R';
 }
 
+#intro h1 {
+  color: rgb(201, 121, 121);
+}
+
+#intro p {
+  color: #6b6666;
+}
+
 .axis path,
 .axis line {
   fill: none;
-  stroke-width: 1px;
+  stroke-width: 1.5px;
   stroke: #000;
   shape-rendering: crispEdges;
 }
@@ -27,6 +35,7 @@ svg {
 .fullWidth{
   width: 100%!important;
 }
+
 ul.maxUlHeight {
     max-height: 200px;
     overflow-y: auto;
@@ -36,6 +45,61 @@ ul.maxUlHeight {
 .removeButton{
   cursor: pointer;
 }
+
+.navbar-brand {
+  padding: 5px 15px;
+}
+.navbar-brand img {
+  width: auto;
+  max-height: 100%;
+}
+
+.list-group-item>.badge {
+  float: right;
+  cursor: pointer;
+}
+
+ul.list-group.addCountries {
+  max-height: 200px;
+  overflow-y: auto;
+  height: 200px;
+  margin-bottom: 0px;
+}
+
+.addgraph {
+  width: 100%;
+  height: 30em;
+  background: #F1F1F1;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 1em;
+  -webkit-box-shadow: 5px 5px 0px -1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 5px 5px 0px -1px rgba(0,0,0,0.15);
+  box-shadow: 5px 5px 0px -1px rgba(0,0,0,0.15);
+}
+
+.graphcontainer {
+  margin-bottom: 4em;
+}
+
+.addgraph:hover {
+  opacity: .6;
+}
+
+.addgraph p {
+  color: #C97979;
+  padding-top: 1em;
+}
+
+.addcross {
+  width: 3em;
+  margin-top: 13em;
+}
+
+.addCountries {
+  background: #F1F1F1;
+}
+
 /*#intro {
   margin-bottom: 3em;
 }
