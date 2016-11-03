@@ -57,6 +57,13 @@ init(function(data){
 
 });
 
+var refresh = function(){
+
+		var filteredData = filterData(datavis.data.merged);
+		//load data
+		load(formData(filteredData));	
+}
+
 $(document).ready(function(){
 
 	$('.loadReal').click(function(){
@@ -64,11 +71,7 @@ $(document).ready(function(){
 		//set languages
 		datavis.loadOptions.langs = [];
 
-		//filter data
-		var filteredData = filterData(datavis.data.merged);
-
-		//load data
-		load(formData(filteredData));
+		refresh();
 
 	})
 
@@ -77,13 +80,8 @@ $(document).ready(function(){
 		//set languages
 		datavis.loadOptions.langs = ['US'];
 
-		//filter data
-		var filteredData = filterData(datavis.data.merged);
+		refresh();
 
-		console.log(formData(filteredData))
-
-		//load data
-		load(formData(filteredData));
 	})
 
 

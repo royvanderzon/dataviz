@@ -27,7 +27,12 @@ svg {
 .fullWidth{
   width: 100%!important;
 }
-
+ul.list-group.addCountries {
+    max-height: 200px;
+    overflow-y: auto;
+    height: 200px;
+    margin-bottom: 0px;
+}
 /*#intro {
   margin-bottom: 3em;
 }
