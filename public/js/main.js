@@ -60,9 +60,6 @@ init(function(data){
 $(document).ready(function(){
 
 	$('.loadReal').click(function(){
-		load(load(formData(datavis.data.merged)));
-	})
-
 
 		//set languages
 		datavis.loadOptions.langs = [];
