@@ -211,3 +211,58 @@ var refreshSaveList = function(){
 	$('.saveStateList').html(html);
 
 }
+
+
+//plus minus buttons
+$(document).ready(function(){
+
+	//drempel
+	$('#spinner0').val(datavis.drempels.denied);
+	$('#spinner0').on('change',function(){
+		datavis.drempels.denied = Number($(this).val());
+		init();
+		refresh();
+	})
+
+	//check 1
+	$('#spinner1').val(datavis.drempels.checks.check1Factor);
+	$('#spinner1').on('change',function(){
+		datavis.drempels.checks.check1Factor = Number($(this).val());
+		init();
+		refresh();
+	})
+
+	//check 2
+	$('#spinner2').val(datavis.drempels.checks.check2);
+	$('#spinner2').on('change',function(){
+		datavis.drempels.checks.check2.unknown = Number($(this).val());
+		datavis.drempels.checks.check2.different = Number($(this).val());
+		init();
+		refresh();
+	})
+
+	//check 3
+	$('#spinner3').val(datavis.drempels.checks.check3Points);
+	$('#spinner3').on('change',function(){
+		datavis.drempels.checks.check3Points = Number($(this).val());
+		init();
+		refresh();
+	})
+
+	//check 5
+	$('#spinner5').val(datavis.drempels.checks.check5);
+	$('#spinner5').on('change',function(){
+		datavis.drempels.checks.check5 = Number($(this).val());
+		init();
+		refresh();
+	})
+
+	//check 6
+	$('#spinner6').val(datavis.drempels.checks.check6);
+	$('#spinner6').on('change',function(){
+		datavis.drempels.checks.check6 = Number($(this).val());
+		init();
+		refresh();
+	})
+
+})
