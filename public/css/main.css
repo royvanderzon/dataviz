@@ -121,15 +121,24 @@ background: #F1F1F1;
   cursor: pointer;
 }
 
-.scrollup {
-  width: 1.4em;
-  border-radius: 50%;
-  background: #C97979;
-  color: white;
-  font-size: 2em;
-  margin: 0 auto;
+.scrollup-container {
+  display: flex;
+  justify-content: center;
   margin-top: -.5em;
   margin-bottom: 1.5em;
+}
+
+.scrollup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+
+  background: #C97979;
+  color: #fff;
+  border-radius: 100%;
+
   cursor: pointer;
 }
 
