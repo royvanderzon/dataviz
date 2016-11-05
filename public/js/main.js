@@ -56,16 +56,13 @@ init(function(data){
 	handleLangSelect();
 	handleChecks();
 
-	//init savestates
-	refreshSaveList();
-
 });
 
 var refresh = function(){
 
 		var filteredData = filterData(datavis.data.merged);
 		//load data
-		load(formData(filteredData));	
+		load(formData(filteredData));
 }
 
 $(document).ready(function(){
@@ -107,6 +104,40 @@ $(document).ready(function(){
 
 $('.addgraph').each(function() {
 	$('.addgraph').on('click', function() {
-		 $(this).replaceWith($('#insertGraph').clone());
+		$(this).replaceWith($('#insertGraph').clone().removeClass('clone').addClass('cloneA'));
 	});
 });
+
+
+// autoscrollup
+
+$('.scrollup').click(function() {
+    $('html,body').animate({
+        scrollTop: $('body').offset().top},
+        'slow');
+});
+
+// $('.removegraph').on('click', derp, function() {
+// 	 $('.cloneA').replaceWith($('.addgraph:first').clone());
+// });
+
+
+// function derp() {
+// 	$('.addgraph').each(function() {
+// 		$('.addgraph').on('click', function() {
+// 			$(this).replaceWith($('#insertGraph').clone().removeClass('clone').addClass('cloneA'));
+// 		});
+// 	});
+// }
+//
+// $('.removegraph').on('click', derp, function() {
+// 	 $('.cloneA').replaceWith($('.addgraph:first').clone());
+// });
+//
+// derp();
+
+// $('.removegraph').on('click', function() {
+// 	$('.cloneA').remove();
+// 	$('.addgraph').remove();
+// 	$('.addgraph').clone();
+// })
