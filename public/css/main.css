@@ -1,10 +1,8 @@
 body {
   padding-top: 70px;
+  font-family: 'Ubuntu-R', sans-serif;
 }
 
-* {
-  font-family: 'Ubuntu-R';
-}
 
 #intro h1 {
   color: rgb(201, 121, 121);
