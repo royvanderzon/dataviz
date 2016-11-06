@@ -112,9 +112,12 @@ $('.addgraph').each(function() {
 // autoscrollup
 
 $('.scrollup').click(function() {
-    $('html,body').animate({
-        scrollTop: $('body').offset().top},
-        'slow');
+  $('html,body').animate(
+		{
+      scrollTop: $('body').offset().top
+		},
+		'slow'
+	);
 });
 
 // $('.removegraph').on('click', derp, function() {
