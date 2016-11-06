@@ -38,7 +38,7 @@ $(document).ready(function(){
 	// ADD COUNTRIES
 	///////////////////////////////////////////////////////
 
-	var refreshCountrieSelect = function(){
+	var refreshCountrySelect = function(){
 		$('.addCountries').html();
 		var html = '';
 
@@ -65,7 +65,7 @@ $(document).ready(function(){
 			$(this).val('ALL COUNTRIES');
 		}
 
-		refreshCountrieSelect();
+		refreshCountrySelect();
 
 		refresh();
 	})
@@ -169,7 +169,7 @@ $(document).ready(function(){
 
 				refresh();
 				refreshChecksSelect();
-				refreshCountrieSelect();
+				refreshCountrySelect();
 				break;
 			}
 		}
