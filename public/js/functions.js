@@ -49,11 +49,11 @@ var datavis = {
 
 					var found = false;
 					for(var ii = 0;ii<langs.length;ii++){
-						
+
 						if(data[i].shoppercountrycode == langs[ii]){
 							found = true;
 						}
-						
+
 					}
 					if(found){
 						newData.push(data[i]);
@@ -63,46 +63,6 @@ var datavis = {
 
 			}
 			return newData;
-		},
-		filterCheck : function(checks,data){
-
-			//fout!
-
-			if(checks.length < 1){
-
-			}else{
-				
-				for(var i = 0;i<data.length;i++){
-
-					var target = data[i].checks;
-
-					for (var iterationCheckKey in target){
-					    if (typeof target[iterationCheckKey] !== 'function') {
-
-					    	var found = false;
-					    	for(var ii = 0;ii<checks.length;ii++){
-					    		// console.log(String(checks[ii]))
-					    		// console.log(target[iterationCheckKey])
-					    		if(String(checks[ii]) == String(iterationCheckKey)){
-					    			found = true;
-					    			// console.log('match')
-					    			break;
-					    		}
-					    	}
-
-					    	if(!found){
-					    		delete target[iterationCheckKey];
-					    	}
-
-					    }
-					}
-
-				}
-
-			}
-			console.log(checks);
-			console.log(data);
-			return data;
 		}
 	}
 }
@@ -138,4 +98,3 @@ if(stateCounter === null){
 	var counter = 0;
 	localStorage.setItem('counter',counter);
 }
-
