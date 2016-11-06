@@ -1,19 +1,3 @@
-var handleChecks = function(){
-
-	var html = '';
-	datavis.data.checksList.sort();
-	datavis.data.checksList.unshift('ALL CHECKS')
-	for(var i = 0;i<datavis.data.checksList.length;i++){
-		// console.log(datavis.data.checksList[i])
-		if(datavis.data.checksList[i] != ''){
-			html += '<option value="'+datavis.data.checksList[i]+'">'+datavis.data.checksList[i]+'</option>';
-		}
-	}
-
-	$('#selectChecks').html(html);
-	$('#selectChecks').selectpicker('refresh');
-}
-
 var handleLangSelect = function(){
 	var html = '';
 	datavis.data.countries.list.sort();
@@ -30,6 +14,23 @@ var handleLangSelect = function(){
 	$('#selectCountries').html(html);
 	$('#selectCountries').selectpicker('refresh');
 }
+
+var handleChecks = function(){
+
+	var html = '';
+	datavis.data.checksList.sort();
+	datavis.data.checksList.unshift('ALL CHECKS')
+	for(var i = 0;i<datavis.data.checksList.length;i++){
+		// console.log(datavis.data.checksList[i])
+		if(datavis.data.checksList[i] != ''){
+			html += '<option value="'+datavis.data.checksList[i]+'">'+datavis.data.checksList[i]+'</option>';
+		}
+	}
+
+	$('#selectChecks').html(html);
+	$('#selectChecks').selectpicker('refresh');
+}
+
 
 $(document).ready(function(){
 
