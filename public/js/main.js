@@ -120,24 +120,62 @@ var getInfoHtml = function(){
 
 	var loadOptions = datavis.loadOptions;
 
-	//generate languages list
-	html += '<h3>Languages</h3>'
-	html += '<ul>';
-	if(loadOptions.langs.length > 0){
-		for(var i = 0;i<loadOptions.langs.length;i++){
+	if(datavis.loadOptions.emails.length > 0){
+
+		//generate languages list
+		html += '<h3>Users</h3>';
+		html += '<ul>';
+		if(loadOptions.emails.length > 0){
+			for(var i = 0;i<loadOptions.emails.length;i++){
+				html += '<li>';
+				html += loadOptions.emails[i];
+				html += '</li>';
+			}
+		}else{
 			html += '<li>';
-			html += loadOptions.langs[i];
+			html += 'All users';
 			html += '</li>';
 		}
-	}else{
+		html += '</ul>';
+
+		html += '<h3>Languages</h3>'
+		html += '<ul>';
 		html += '<li>';
 		html += 'All countries';
 		html += '</li>';
+		html += '</ul>';
+
+
+	}else{
+
+		html += '<h3>Users</h3>'
+		html += '<ul>';
+		html += '<li>';
+		html += 'All users';
+		html += '</li>';
+		html += '</ul>';
+
+		//generate languages list
+		html += '<h3>Languages</h3>';
+		html += '<ul>';
+		if(loadOptions.langs.length > 0){
+			for(var i = 0;i<loadOptions.langs.length;i++){
+				html += '<li>';
+				html += loadOptions.langs[i];
+				html += '</li>';
+			}
+		}else{
+			html += '<li>';
+			html += 'All countries';
+			html += '</li>';
+		}
+		html += '</ul>';
+
+
 	}
-	html += '</ul>';
 
 	//generate checks list
-	html += '<h3>Checks</h3>'
+	html += '<h3>Checks</h3>';
 	html += '<ul>';
 	if(loadOptions.checks.length > 0){
 		for(var i = 0;i<loadOptions.checks.length;i++){
