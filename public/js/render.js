@@ -348,6 +348,14 @@ var data3 = [{
 
 // RENDER
 
+var tooltip = d3.select("body")
+	.append("div")
+	.attr("class","tip")
+	.style("position", "absolute")
+	.style("z-index", "10")
+	.style("visibility", "hidden")
+	.text("Tooltip");
+
 var margin = {
 		top: 40,
 		right: 40,
@@ -384,7 +392,77 @@ var svg = d3.select("#insertGraph").append("svg")
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var titleLabels = [{ 
+		cx: -20, 
+		cy: -22, 
+		radius: 20, 
+		label : "email accounts : " + datavis.data.counts.emails 
+	},{ 
+		cx: -20, 
+		cy: -11, 
+		radius: 20, 
+		label : "transactions : " + datavis.data.counts.transactions
+	}];
+
+var text = svg.selectAll("text")
+    .data(titleLabels)
+    .enter()
+	.append("text")
+	.attr("class","textLabels");
+
+var renderToolHtml = function(d){
+
+	var html = '';
+
+	html += '<div class="tipcontainer">';
+
+	html += '<p><strong>';
+	html += datavis.checkDefenitions[d.State];
+	html += '</strong></p>';
+
+	html += '<ul class="tooltip-ul">';
+	html += '<li>Alert : <strong>'+d.alert+'</strong></li>';
+	html += '<li>Denied : <strong>'+d.denied+'</strong></li>';
+	html += '<li>Fraud : <strong>'+d.fraud+'</strong></li>';
+	html += '<li>Email accounts : <strong>'+datavis.data.counts.emails+'</strong></li>';
+	html += '<li>Transactions : <strong>'+datavis.data.counts.transactions+'</strong></li>';
+	html += '</ul>';
+
+	html += '</div>';
+
+	return html;
+
+}
+
 var load = function(data) {
+
+	svg.selectAll(".textLabels").remove();
+
+	var titleLabels = [{ 
+		cx: -20, 
+			cy: -30, 
+			radius: 20, 
+			label : "email accounts : " + datavis.data.counts.emails 
+		},{ 
+			cx: -20, 
+			cy: -17, 
+			radius: 20, 
+			label : "transactions : " + datavis.data.counts.transactions
+		}];
+
+	var text = svg.selectAll("textLabels")
+	    .data(titleLabels)
+	    .enter()
+		.append("text")
+		.attr("class","textLabels");
+
+	var textLabels = text
+     	.attr("x", function(d) { return d.cx; })
+     	.attr("y", function(d) { return d.cy; })
+     	.text( function (d) { return d.label; })
+     	.attr("font-family", "sans-serif")
+     	.attr("font-size", "12px")
+        .attr("fill", "#333");
 
 	var ageNames = d3.keys(data[0]).filter(function(key) {
 		return key !== "State";
@@ -442,7 +520,20 @@ var load = function(data) {
 		.attr("class", "state")
 		.attr("transform", function(d) {
 			return "translate(" + x0(d.State) + ",0)";
+		}).on("mouseover", function(d,i) {
+			tooltip.html(renderToolHtml(d));
+			tooltip.style("visibility", "visible");
+		}).on("mousemove",function(){
+			tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
+		})
+		.on("mouseout", function(d, i) {
+				tooltip.style("visibility", "hidden");
 		});
+			// d3.select(otherEl[i])
+			// 	.attr("fill", "steelblue");
+			// d3.select(this)
+			// 	.attr("fill", "steelblue");
+			// tooltip.html(createTipList(d));
 
 	state.selectAll("rect")
 		.data(function(d) {
