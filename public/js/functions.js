@@ -98,14 +98,35 @@ var datavis = {
 		},
 		setCounts: function(data){
 
+			datavis.data.counts.alert = 0;
+			datavis.data.counts.denied = 0;
 			datavis.data.counts.fraud = 0;
+
 			for(var i = 0;i<data.length;i++){
+			// for(var i = 0;i<300;i++){
+
 				if(data[i].fraud == '1'){
 					datavis.data.counts.fraud++;
 				}
-			}
-			console.log(datavis.data.counts.fraud);
 
+				//where totalpoints is higher, count denied
+	        	var thisTotalPoints = 0;
+	        	var thisChecks = data[i].checks;
+	        	//loop --> checks in this data to see how much is denied
+	        	for (var checkInThisData in thisChecks){
+				    if (typeof thisChecks[checkInThisData] !== 'function') {
+				    	// console.log(checkInThisData)
+				    	if(thisChecks[checkInThisData].points>0){
+				    		datavis.data.counts.alert++;
+				    	}
+				    	thisTotalPoints = Number(thisTotalPoints) + Number(thisChecks[checkInThisData].points);
+				    }
+			    }
+			    if(thisTotalPoints > datavis.drempels.denied){
+			    	datavis.data.counts.denied++;
+			    }
+
+			}
 		}
 	},
 	filters : {

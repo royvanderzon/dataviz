@@ -463,16 +463,9 @@ var load = function(data) {
 		var totalBar = {};
 		totalBar.State = 'total';
 		totalBar.ages = [];
-		totalBar.alert = 0;
-		totalBar.denied = 0;
-		totalBar.fraud = 0;
-
-		for(var i = 0;i<data.length;i++){
-			console.log(data[i]);
-			totalBar.alert = totalBar.alert + data[i].alert;
-			totalBar.denied = totalBar.denied + data[i].denied;
-			totalBar.fraud = totalBar.fraud + data[i].fraud;
-		}
+		totalBar.alert = datavis.data.counts.alert;
+		totalBar.denied = datavis.data.counts.denied;
+		totalBar.fraud = datavis.data.counts.fraud;
 
 		var agesArray = [{
 			name : 'alert',
