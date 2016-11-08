@@ -456,7 +456,6 @@ var load = function(data) {
 		});
 	});
 
-
 	//add totals bar
 	if(datavis.settings.showTotal){
 
@@ -480,8 +479,7 @@ var load = function(data) {
 
 		totalBar.ages = agesArray;
 
-		console.log(totalBar);
-		data.push(totalBar);
+		data.unshift(totalBar);
 		
 	}
 	// console.log(data);
@@ -549,6 +547,8 @@ var load = function(data) {
 
 	var state = svg.selectAll(".state").remove();
 	state.selectAll("rect").remove();
+	svg.selectAll(".averageLine").remove();
+	svg.selectAll(".barsEndlineText").remove();
 
 
 
@@ -617,6 +617,77 @@ var load = function(data) {
 		.text(function(d) {
 			return d;
 		});
+
+	if(datavis.settings.averageLine){
+
+		console.log(data);
+
+		//set averages
+		var averages = {};
+		averages.alert = 0;
+		averages.denied = 0;
+		averages.fraud = 0;
+
+		for(var i = 0;i<data.length;i++){
+			averages.alert = averages.alert + data[i].alert;
+			averages.denied = averages.denied + data[i].denied;
+			averages.fraud = averages.fraud + data[i].fraud;
+		}
+
+		console.log(averages.alert)
+		console.log(averages.denied)
+		console.log(averages.fraud)
+
+		averages.alert = averages.alert / data.length;
+		averages.denied = averages.denied / data.length;
+		averages.fraud = averages.fraud / data.length;
+			
+		//average lines
+		var line = svg.append('g');
+
+		//alert
+		line.append("line")
+			.attr("class","averageLine")
+		    .style("stroke", "#333")
+		    .attr("stroke-width","1")
+		    .attr("x1", 0)
+		    .attr('transform','translate(0,'+y(averages.alert)+')')
+		    .attr("x2", width);
+
+	    line.append('text')
+            .attr('class', 'barsEndlineText')
+		    .attr('transform','translate('+(width-20)+','+y(averages.alert)+')')
+            .text('alert ' + (averages.alert.toFixed(0)));
+
+        //denied
+        line.append("line")
+			.attr("class","averageLine")
+		    .style("stroke", "#333")
+		    .attr("stroke-width","1")
+		    .attr("x1", 0)
+		    .attr('transform','translate(0,'+y(averages.denied)+')')
+		    .attr("x2", width);
+
+	    line.append('text')
+            .attr('class', 'barsEndlineText')
+		    .attr('transform','translate('+(width-20)+','+y(averages.denied)+')')
+            .text('denied ' + (averages.denied.toFixed(0)));
+
+        //fraud
+        line.append("line")
+			.attr("class","averageLine")
+		    .style("stroke", "#333")
+		    .attr("stroke-width","1")
+		    .attr("x1", 0)
+		    .attr('transform','translate(0,'+y(averages.fraud)+')')
+		    .attr("x2", width);
+
+	     line.append('text')
+            .attr('class', 'barsEndlineText')
+		    .attr('transform','translate('+(width-20)+','+y(averages.fraud)+')')
+            .text('fraud ' + (averages.fraud.toFixed(0)));
+
+	}
 
 	//clear data
 	for (var i = 0; i < data.length; i++) {

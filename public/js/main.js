@@ -244,6 +244,16 @@ $('input[name="showTotal"]').on('switchChange.bootstrapSwitch', function(event, 
 
 });
 
+$("[name='averageLine']").bootstrapSwitch();
+
+$('input[name="averageLine"]').on('switchChange.bootstrapSwitch', function(event, state) {
+
+  datavis.settings.averageLine = state;
+
+  refresh();
+
+});
+
 // $('.removegraph').on('click', derp, function() {
 // 	 $('.cloneA').replaceWith($('.addgraph:first').clone());
 // });
