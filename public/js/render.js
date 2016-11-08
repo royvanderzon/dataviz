@@ -620,7 +620,7 @@ var load = function(data) {
 
 	if(datavis.settings.averageLine){
 
-		console.log(data);
+		// console.log(data);
 
 		//set averages
 		var averages = {};
@@ -634,9 +634,9 @@ var load = function(data) {
 			averages.fraud = averages.fraud + data[i].fraud;
 		}
 
-		console.log(averages.alert)
-		console.log(averages.denied)
-		console.log(averages.fraud)
+		// console.log(averages.alert)
+		// console.log(averages.denied)
+		// console.log(averages.fraud)
 
 		averages.alert = averages.alert / data.length;
 		averages.denied = averages.denied / data.length;
