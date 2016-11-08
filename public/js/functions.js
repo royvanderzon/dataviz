@@ -5,7 +5,8 @@ var datavis = {
 		emails : []
 	},
 	settings : {
-		showTotal : false
+		showTotal : false,
+		averageLine : true
 	},
 	data : {
 		countries : {
