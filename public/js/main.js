@@ -56,6 +56,9 @@ init(function(data){
 	handleLangSelect();
 	handleChecks();
 
+	//load in saved states
+	refreshSaveList();
+
 });
 
 var refresh = function(){
@@ -102,12 +105,82 @@ $(document).ready(function(){
 
 // add graphs on click
 
-$('.addgraph').each(function() {
-	$('.addgraph').on('click', function() {
-		$(this).replaceWith($('#insertGraph').clone().removeClass('clone').addClass('cloneA'));
-	});
+// $('.addgraph').each(function() {
+// 	$('.addgraph').on('click', function() {
+// 		$(this).replaceWith($('#insertGraph').clone().removeClass('clone').addClass('cloneA'));
+// 	});
+// });
+
+var getInfoHtml = function(){
+
+	var html = '';
+
+	var loadOptions = datavis.loadOptions;
+
+	//generate languages list
+	html += '<h3>Languages</h3>'
+	html += '<ul>';
+	if(loadOptions.langs.length > 0){
+		for(var i = 0;i<loadOptions.langs.length;i++){
+			html += '<li>';
+			html += loadOptions.langs[i];
+			html += '</li>';
+		}
+	}else{
+		html += '<li>';
+		html += 'All countries';
+		html += '</li>';
+	}
+	html += '</ul>';
+
+	//generate checks list
+	html += '<h3>Checks</h3>'
+	html += '<ul>';
+	if(loadOptions.checks.length > 0){
+		for(var i = 0;i<loadOptions.checks.length;i++){
+			html += '<li>';
+			html += loadOptions.checks[i];
+			html += '</li>';
+		}
+	}else{
+		html += '<li>';
+		html += 'All countries';
+		html += '</li>';
+	}
+	html += '</ul>';
+
+	return html;
+
+}
+
+$('.graphcontainer').on('click','.addgraph',function(){
+	$(this).parent().removeClass('noGraph');
+	$(this).html($('#insertGraph').html());
+
+	var infoHtml = getInfoHtml();
+	$(this).parent().find('.info').html(infoHtml);
+	// $(this).replaceWith($('#insertGraph').clone().removeClass('clone').addClass('cloneA'));
+})
+$('.graphcontainer').on('click','.delGraph',function(){
+	$(this).parent().parent().hide('fast',function(){
+		// $(this).parent().remove();
+		$(this).remove();
+	})
+});
+$('.graphcontainer').on('click','.addCanvas',function(){
+	// $('.graphcontainer').append($('#canvasTemplate').html());
+	var html = $('#canvasTemplate').html();
+	$(html).insertBefore($('.newCanvas'));
 });
 
+$('.graphcontainer').on('click','.renewGraph',function(){
+	$(this).parent().parent().find('.addgraph').html($('#insertGraph').html());
+
+	console.log($(this))
+
+	var infoHtml = getInfoHtml();
+	$(this).parent().parent().find('.info').html(infoHtml);
+});
 
 // autoscrollup
 
