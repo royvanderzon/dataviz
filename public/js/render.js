@@ -375,7 +375,8 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
 	.scale(y)
 	.orient("left")
-	.tickFormat(d3.format(".2s"));
+	.tickFormat(d3.format("1"));
+	// .tickFormat(d3.format(".2s"));
 
 var svg = d3.select("#insertGraph").append("svg")
 	.attr("width", width + margin.left + margin.right)
