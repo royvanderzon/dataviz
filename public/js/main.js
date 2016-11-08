@@ -234,6 +234,16 @@ $('.scrollup').click(function() {
 	);
 });
 
+$("[name='showTotal']").bootstrapSwitch();
+
+$('input[name="showTotal"]').on('switchChange.bootstrapSwitch', function(event, state) {
+
+  datavis.settings.showTotal = state;
+
+  refresh();
+
+});
+
 // $('.removegraph').on('click', derp, function() {
 // 	 $('.cloneA').replaceWith($('.addgraph:first').clone());
 // });

@@ -13,6 +13,9 @@ var filterData = function(data){
 	//filter users --> (users array,data)
 	data = datavis.filters.filterUser(datavis.loadOptions.emails,data);
 
+	//set counter for total bar set
+	datavis.getters.setCounts(data);
+
 	return data;
 
 }

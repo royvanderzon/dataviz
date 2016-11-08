@@ -4,6 +4,9 @@ var datavis = {
 		checks : [],
 		emails : []
 	},
+	settings : {
+		showTotal : false
+	},
 	data : {
 		countries : {
 			list: [],
@@ -11,7 +14,10 @@ var datavis = {
 		},
 		counts : {
 			emails : 0,
-			transactions : 0
+			transactions : 0,
+			alert : 0,
+			denied : 0,
+			fraud : 0
 		},
 		uniqueEmails : [],
 		cardNumbersWithEmails : [],
@@ -89,6 +95,17 @@ var datavis = {
 			}
 
 			return newData.length;
+		},
+		setCounts: function(data){
+
+			datavis.data.counts.fraud = 0;
+			for(var i = 0;i<data.length;i++){
+				if(data[i].fraud == '1'){
+					datavis.data.counts.fraud++;
+				}
+			}
+			console.log(datavis.data.counts.fraud);
+
 		}
 	},
 	filters : {
@@ -165,7 +182,8 @@ var datavis = {
 		check3 : 'Shopper country is high risk',
 		check4 : 'Different countries used by the same shopper email address',
 		check5 : 'Shopper country differs from issuing country and/or country of currency',
-		check6 : 'Card number already used by other shopper (shopper email)'
+		check6 : 'Card number already used by other shopper (shopper email)',
+		total : 'Total stats of this graph'
 	}
 }
 

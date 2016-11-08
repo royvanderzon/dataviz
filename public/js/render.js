@@ -442,6 +442,58 @@ var renderToolHtml = function(d){
 
 var load = function(data) {
 
+
+	var ageNames = d3.keys(data[0]).filter(function(key) {
+		return key !== "State";
+	});
+
+	data.forEach(function(d) {
+		d.ages = ageNames.map(function(name) {
+			return {
+				name: name,
+				value: +d[name]
+			};
+		});
+	});
+
+
+	//add totals bar
+	if(datavis.settings.showTotal){
+
+		var totalBar = {};
+		totalBar.State = 'total';
+		totalBar.ages = [];
+		totalBar.alert = 0;
+		totalBar.denied = 0;
+		totalBar.fraud = 0;
+
+		for(var i = 0;i<data.length;i++){
+			console.log(data[i]);
+			totalBar.alert = totalBar.alert + data[i].alert;
+			totalBar.denied = totalBar.denied + data[i].denied;
+			totalBar.fraud = totalBar.fraud + data[i].fraud;
+		}
+
+		var agesArray = [{
+			name : 'alert',
+			value : totalBar.alert
+		},{
+			name : 'denied',
+			value : totalBar.denied
+		},{
+			name : 'fraud',
+			value : totalBar.fraud
+		}];
+
+		totalBar.ages = agesArray;
+
+		console.log(totalBar);
+		data.push(totalBar);
+		
+	}
+	// console.log(data);
+
+	//set text labels with totals
 	svg.selectAll(".textLabels").remove();
 
 	var titleLabels = [{ 
@@ -470,20 +522,7 @@ var load = function(data) {
      	.attr("font-size", "12px")
         .attr("fill", "#333");
 
-	var ageNames = d3.keys(data[0]).filter(function(key) {
-		return key !== "State";
-	});
-
-	data.forEach(function(d) {
-		d.ages = ageNames.map(function(name) {
-			return {
-				name: name,
-				value: +d[name]
-			};
-		});
-	});
-
-
+    //set domains 
 	x0.domain(data.map(function(d) {
 		return d.State;
 	}));
