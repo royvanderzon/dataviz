@@ -6,6 +6,8 @@ var init = function(cb){
 
 	var data = datavis.data.raw;
 
+	data = datavis.getters.emails(data);
+
 	//check 1
 	check1(data,function(){
 
@@ -55,6 +57,7 @@ init(function(data){
 	//handle select boxes
 	handleLangSelect();
 	handleChecks();
+	handleEmail();
 
 	//load in saved states
 	refreshSaveList();

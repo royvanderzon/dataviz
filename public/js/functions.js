@@ -1,13 +1,15 @@
 var datavis = {
 	loadOptions : {
 		langs : [],
-		checks : []
+		checks : [],
+		emails : []
 	},
 	data : {
 		countries : {
 			list: [],
 			stats : {}
 		},
+		uniqueEmails : [],
 		cardNumbersWithEmails : [],
 		raw : [],
 		merged : [],
@@ -34,6 +36,32 @@ var datavis = {
 			check3Points : 20,
 			check5 : 35,
 			check6 : 35
+		}
+	},
+	getters : {
+		emails : function(data){
+
+			var newData = [];
+
+			newData.push(data[0].email_id);
+
+			for(var i = 0;i<data.length;i++){
+
+				var found = false;
+				for(var ii = 0;ii<newData.length;ii++){
+					if(newData[ii] == data[i].email_id){
+						found = true;
+						break;
+					}
+				}
+				if(!found){
+					newData.push(data[i].email_id);
+				}
+
+			}
+
+			datavis.data.uniqueEmails = newData;
+			return data;
 		}
 	},
 	filters : {
@@ -63,7 +91,46 @@ var datavis = {
 
 			}
 			return newData;
-		}
+		},
+		filterUser : function(users,data){
+		// data = datavis.filters.filterUser(datavis.loadOptions.users,data);
+
+			if(typeof users !== 'undefined'){
+
+				var newData = [];
+				//RANDOM PEOPLE
+				// var users = ['email1384'];
+				// var users = ['email1318'];
+				// var users = ['email64'];
+				//FRAUDEURRRRR
+				// var users = ['email1613'];
+				if(users.length < 1){
+					newData = data;
+				}else{
+					//users = ['NL','CO','CA','US','DE'];
+
+					for(var i = 0;i<data.length;i++){
+
+						var found = false;
+						for(var ii = 0;ii<users.length;ii++){
+
+							if(data[i].email_id == users[ii]){
+								found = true;
+							}
+
+						}
+						if(found){
+							newData.push(data[i]);
+						}
+
+					}
+
+				}
+				return newData;
+			}else{
+				return data;
+			}
+		},
 	}
 }
 

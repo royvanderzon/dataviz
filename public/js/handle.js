@@ -31,6 +31,23 @@ var handleChecks = function(){
 	$('#selectChecks').selectpicker('refresh');
 }
 
+var handleEmail = function(){
+
+	var html = '';
+	datavis.data.uniqueEmails.sort();
+	datavis.data.uniqueEmails.unshift('ALL EMAILS')
+	for(var i = 0;i<50;i++){
+	// for(var i = 0;i<datavis.data.uniqueEmails.length;i++){
+		// console.log(datavis.data.uniqueEmails[i])
+		if(datavis.data.uniqueEmails[i] != ''){
+			html += '<option value="'+datavis.data.uniqueEmails[i]+'">'+datavis.data.uniqueEmails[i]+'</option>';
+		}
+	}
+
+	$('#selectEmail').html(html);
+	$('#selectEmail').selectpicker('refresh');
+}
+
 
 $(document).ready(function(){
 
@@ -116,6 +133,47 @@ $(document).ready(function(){
 		for(var i = 0;i<datavis.loadOptions.checks.length;i++){
 			if(datavis.loadOptions.checks[i] == $(this).attr('data-type')){
 				datavis.loadOptions.checks.splice(i,1)
+			}
+		}
+		refresh();
+	} );
+
+	///////////////////////////////////////////////////////
+	// ADD USER EMAILS
+	///////////////////////////////////////////////////////
+
+	var refreshUsersSelect = function(){
+		$('.addUsers').html();
+		var html = '';
+		// for(var i = 0;i<datavis.loadOptions.checks.length;i++){
+		for(var i = datavis.loadOptions.emails.length-1;i>-1;i--){
+			html += '<li class="list-group-item">'+datavis.loadOptions.emails[i]+' <span class="badge removeButton delUser" data-type="'+datavis.loadOptions.emails[i]+'">&times;</span></li>'
+		}
+		$('.addUsers').html(html);
+	}
+
+	$('#selectEmail').on('change',function(){
+
+		console.log(datavis.loadOptions.emails)
+		var found = (datavis.loadOptions.emails.indexOf($(this).val()) > -1);
+		if(!found){
+			datavis.loadOptions.emails.push($(this).val());
+		}
+
+		if($(this).val() == 'ALL EMAILS'){
+			datavis.loadOptions.emails = [];
+			$(this).val('ALL EMAILS');
+		}
+
+		refreshUsersSelect();
+		refresh();
+	});
+
+	$( ".addUsers" ).on( "click", ".delUser", function(){
+		$(this).parent().remove();
+		for(var i = 0;i<datavis.loadOptions.emails.length;i++){
+			if(datavis.loadOptions.emails[i] == $(this).attr('data-type')){
+				datavis.loadOptions.emails.splice(i,1)
 			}
 		}
 		refresh();
