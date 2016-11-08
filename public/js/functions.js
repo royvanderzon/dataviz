@@ -6,7 +6,7 @@ var datavis = {
 	},
 	settings : {
 		showTotal : false,
-		averageLine : true
+		averageLine : false
 	},
 	data : {
 		countries : {
