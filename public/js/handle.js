@@ -192,6 +192,7 @@ $(document).ready(function(){
 		saveObj.time = moment().unix();
 		saveObj.langs = datavis.loadOptions.langs;
 		saveObj.checks = datavis.loadOptions.checks;
+		saveObj.emails = datavis.loadOptions.emails;
 
 		addCounter();
 
@@ -228,6 +229,7 @@ $(document).ready(function(){
 				refresh();
 				refreshChecksSelect();
 				refreshCountrySelect();
+				refreshUsersSelect();
 				break;
 			}
 		}

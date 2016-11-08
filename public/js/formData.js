@@ -2,7 +2,6 @@ var formData = function(data){
 
 	// console.log(data);
 	// console.log(data[0]);
-	console.log(data);
 	var target = data[0].checks;
 	var formedChecks = [];
 
