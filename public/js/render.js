@@ -410,6 +410,12 @@ var text = svg.selectAll("text")
 	.append("text")
 	.attr("class","textLabels");
 
+var getPercentage = function(input){
+
+	return (input * 100 / datavis.data.counts.transactions).toFixed(2);
+
+}
+
 var renderToolHtml = function(d){
 
 	var html = '';
@@ -421,9 +427,9 @@ var renderToolHtml = function(d){
 	html += '</strong></p>';
 
 	html += '<ul class="tooltip-ul">';
-	html += '<li>Alert : <strong>'+d.alert+'</strong></li>';
-	html += '<li>Denied : <strong>'+d.denied+'</strong></li>';
-	html += '<li>Fraud : <strong>'+d.fraud+'</strong></li>';
+	html += '<li>Alert : <strong>'+d.alert+'</strong> - <em>('+ getPercentage(d.alert)  +'% of total transactions.)</em></li>';
+	html += '<li>Denied : <strong>'+d.denied+'</strong> - <em>('+ getPercentage(d.denied)  +'% of total transactions.)</em></li>';
+	html += '<li>Fraud : <strong>'+d.fraud+'</strong> - <em>('+ getPercentage(d.fraud)  +'% of total transactions.)</em></li>';
 	html += '<li>Email accounts : <strong>'+datavis.data.counts.emails+'</strong></li>';
 	html += '<li>Transactions : <strong>'+datavis.data.counts.transactions+'</strong></li>';
 	html += '</ul>';
