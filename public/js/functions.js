@@ -9,6 +9,10 @@ var datavis = {
 			list: [],
 			stats : {}
 		},
+		counts : {
+			emails : 0,
+			transactions : 0
+		},
 		uniqueEmails : [],
 		cardNumbersWithEmails : [],
 		raw : [],
@@ -62,6 +66,29 @@ var datavis = {
 
 			datavis.data.uniqueEmails = newData;
 			return data;
+		},
+		countEmails : function(data){
+
+			var newData = [];
+
+			newData.push(data[0].email_id);
+
+			for(var i = 0;i<data.length;i++){
+
+				var found = false;
+				for(var ii = 0;ii<newData.length;ii++){
+					if(newData[ii] == data[i].email_id){
+						found = true;
+						break;
+					}
+				}
+				if(!found){
+					newData.push(data[i].email_id);
+				}
+
+			}
+
+			return newData.length;
 		}
 	},
 	filters : {
@@ -130,7 +157,15 @@ var datavis = {
 			}else{
 				return data;
 			}
-		},
+		}
+	},
+	checkDefenitions : {
+		check1 : 'The amount does not coincide with the average amount',
+		check2 : 'Shopper email or card number is used in quick succession',
+		check3 : 'Shopper country is high risk',
+		check4 : 'Different countries used by the same shopper email address',
+		check5 : 'Shopper country differs from issuing country and/or country of currency',
+		check6 : 'Card number already used by other shopper (shopper email)'
 	}
 }
 

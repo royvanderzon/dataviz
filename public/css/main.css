@@ -41,7 +41,18 @@ ul.maxUlHeight {
     margin-bottom: 0px;
     background: #F1F1F1;
 }
-
+.tipcontainer{
+    padding: 15px 20px;
+    margin: 0;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
+    border-bottom: 4px solid rgb(201, 121, 121);
+}
+.tipcontainer .tooltip-ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
 .removeButton, .cursor {
     cursor: pointer;
 }
@@ -65,6 +76,7 @@ ul.maxUlHeight {
     -webkit-box-shadow: 5px 5px 0px -1px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 5px 5px 0px -1px rgba(0, 0, 0, 0.15);
     box-shadow: 5px 5px 0px -1px rgba(0, 0, 0, 0.15);
+    padding-top: 10px;
 }
 
 .graphcontainer {

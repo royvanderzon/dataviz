@@ -113,7 +113,6 @@ $(document).ready(function(){
 
 	$('#selectChecks').on('change',function(){
 
-		console.log(datavis.loadOptions.checks)
 		var found = (datavis.loadOptions.checks.indexOf($(this).val()) > -1);
 		if(!found){
 			datavis.loadOptions.checks.push($(this).val());
@@ -154,7 +153,6 @@ $(document).ready(function(){
 
 	$('#selectEmail').on('change',function(){
 
-		console.log(datavis.loadOptions.emails)
 		var found = (datavis.loadOptions.emails.indexOf($(this).val()) > -1);
 		if(!found){
 			datavis.loadOptions.emails.push($(this).val());
@@ -213,10 +211,7 @@ $(document).ready(function(){
 		var saveStates = getLocal();
 
 		for(var i = 0;i<saveStates.length;i++){
-			console.log(saveStates[i].id)
-			console.log(thisID)
 			if(Number(saveStates[i].id) == Number(thisID)){
-				console.log(saveStates[i]);
 
 				// var newObj = jQuery.extend({},true,saveStates[i]);
 

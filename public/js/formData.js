@@ -1,7 +1,13 @@
 var formData = function(data){
 
-	// console.log(data);
 	// console.log(data[0]);
+
+	//set count transactions
+	datavis.data.counts.transactions = data.length;
+	//set count emails
+	datavis.data.counts.emails = datavis.getters.countEmails(data);
+
+	//set target of checks to iterate through checks object
 	var target = data[0].checks;
 	var formedChecks = [];
 
