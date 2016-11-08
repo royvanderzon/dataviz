@@ -144,7 +144,7 @@ var getInfoHtml = function(){
 		}
 	}else{
 		html += '<li>';
-		html += 'All countries';
+		html += 'All checks';
 		html += '</li>';
 	}
 	html += '</ul>';
