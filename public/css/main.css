@@ -181,10 +181,10 @@ ul.maxUlHeight {
     z-index: 12;
 }
 
-.showOnHoverGraph i:first-of-type {
+.showOnHoverGraph i.fa-refresh {
   font-size: 2.7rem;
 }
-.showOnHoverGraph i:last-of-type {
+.showOnHoverGraph i.fa-close {
   margin-left: 0.8rem;
   font-size: 3.5rem;
 }
