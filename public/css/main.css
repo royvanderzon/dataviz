@@ -3,12 +3,34 @@ body {
     font-family: 'Ubuntu-R', sans-serif;
 }
 
+#intro {
+  margin-top: -1.1em;
+}
+
 #intro h1 {
     color: rgb(201, 121, 121);
+    margin-bottom: .6em;
 }
 
 #intro p {
     color: #6b6666;
+    width: 90%;
+}
+
+#firstrow {
+  margin-top: 2em;
+}
+
+#insertGraph {
+  margin-top: 6em;
+}
+
+.state {
+  cursor: help;
+}
+
+.graphcontainer {
+  margin-top: 2em;
 }
 
 .axis path, .axis line {
@@ -59,11 +81,12 @@ ul.maxUlHeight {
 
 .navbar-brand {
     padding: 5px 15px;
+    margin-left: 25%;
 }
 
 .navbar-brand img {
-    width: auto;
-    max-height: 100%;
+    margin-top: .4em;
+    width: 5em;
 }
 
 .addgraph {
@@ -110,18 +133,19 @@ ul.maxUlHeight {
 .saveState i {
     border-radius: 100%;
     background-color: #ccc;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     text-align: center;
-    font-size: 25px;
-    line-height: 42px;
-    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.35);
+    font-size: 30px;
+    line-height: 52px;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.35);
     padding-left: 4px;
     transition: 200ms all ease-in;
 }
 
 .saveState:hover i {
-    box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.65);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.65);
+    background-color: #C97979;
 }
 
 .graphContainer:hover .saveState {
@@ -202,6 +226,7 @@ ul.maxUlHeight {
 .addCanvas p {
     text-align: center;
     width: 100%;
+    margin-top: .6em;
 }
 
 .insertGraph .showOnHoverGraph i:hover {
@@ -223,7 +248,7 @@ ul.maxUlHeight {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.8rem;
     background: #C97979;
     color: #fff;
     border-radius: 100%;
@@ -238,6 +263,23 @@ ul.maxUlHeight {
     text-align: center;
 }
 
+.badge {
+  padding: 4px 6.8px;
+  background-color: #C97979;
+}
+
+.badge:hover {
+  opacity: .8;
+}
+
+ul.maxUlHeight:nth-child(1) {
+  max-height: 235px;
+  height: 235px;
+}
+
+.fa-refresh {
+  margin-right: .2em;
+}
 
 /*#intro {
   margin-bottom: 3em;
