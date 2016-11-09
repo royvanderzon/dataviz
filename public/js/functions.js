@@ -198,7 +198,7 @@ var datavis = {
 			}
 		}
 	},
-	checkDefenitions : {
+	checkDefinitions : {
 		check1 : 'The amount does not coincide with the average amount',
 		check2 : 'Shopper email or card number is used in quick succession',
 		check3 : 'Shopper country is high risk',
