@@ -63,13 +63,14 @@ var handleEmail = function(){
 		for(var i = 0;i<datavis.data.uniqueEmailsWithFraud.length;i++){
 			if(datavis.data.uniqueEmailsWithFraud[i].email_id != ''){
 				if(datavis.data.uniqueEmailsWithFraud[i].fraud > 0){
-					html += '<option value="'+datavis.data.uniqueEmailsWithFraud[i].email_id+'">'+datavis.data.uniqueEmailsWithFraud[i].email_id+'</option>';
+					html += '<option class="lightRed" value="'+datavis.data.uniqueEmailsWithFraud[i].email_id+'">'+datavis.data.uniqueEmailsWithFraud[i].email_id+'</option>';
 				}
 			}
 		}
 
 	}else{
 
+		html += '<option class="none hide" value="'+datavis.data.uniqueEmailsWithFraud[0].email_id+'">'+datavis.data.uniqueEmailsWithFraud[0].email_id+'</option>';
 		for(var i = 0;i<50;i++){
 			if(datavis.data.uniqueEmailsWithFraud[i].email_id != ''){
 				if(datavis.data.uniqueEmailsWithFraud[i].fraud < 1){
