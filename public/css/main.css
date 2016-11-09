@@ -171,6 +171,15 @@ ul.maxUlHeight {
     cursor: pointer;
     z-index: 12;
 }
+
+.showOnHoverGraph i:first-of-type {
+  font-size: 2.7rem;
+}
+.showOnHoverGraph i:last-of-type {
+  margin-left: 0.8rem;
+  font-size: 3.5rem;
+}
+
 .info {
     position: absolute;
     z-index: -1;
@@ -237,17 +246,18 @@ ul.maxUlHeight {
     cursor: pointer;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .scrollup-container {
-    display: flex;
-    justify-content: center;
     margin-top: -.5em;
     margin-bottom: 1.5em;
 }
 
 .scrollup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 1.8rem;
     background: #C97979;
     color: #fff;
