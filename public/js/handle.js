@@ -43,6 +43,7 @@ var handleChecks = function(){
 
 var handleEmail = function(){
 
+	$('#selectEmail').html(html);
 	var html = '';
 	datavis.data.uniqueEmailsWithFraud.sort(compare);
 	datavis.data.uniqueEmailsWithFraud.unshift({
@@ -50,6 +51,7 @@ var handleEmail = function(){
 		fraud : 0
 	})
 
+	console.log(datavis.settings.fraudEmails)
 	if(datavis.settings.fraudEmails){
 
 		html += '<option class="none hide" value="'+datavis.data.uniqueEmailsWithFraud[0].email_id+'">'+datavis.data.uniqueEmailsWithFraud[0].email_id+'</option>';

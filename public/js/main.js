@@ -70,9 +70,7 @@ var refresh = function(){
 		var filteredData = filterData(datavis.data.merged);
 
 		//refreshEmail
-		if(datavis.settings.fraudEmails){
-			handleEmail();
-		}
+		handleEmail();
 
 		//load data
 		load(formData(filteredData));
