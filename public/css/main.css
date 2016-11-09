@@ -25,6 +25,14 @@ body {
   margin-top: 6em;
 }
 
+.state {
+  cursor: help;
+}
+
+.graphcontainer {
+  margin-top: 2em;
+}
+
 .axis path, .axis line {
     fill: none;
     stroke-width: 1px;
@@ -256,12 +264,17 @@ ul.maxUlHeight {
 }
 
 .badge {
-  padding: 4px 7px;
+  padding: 4px 6.8px;
   background-color: #C97979;
 }
 
 .badge:hover {
   opacity: .8;
+}
+
+ul.maxUlHeight:nth-child(1) {
+  max-height: 235px;
+  height: 235px;
 }
 
 
