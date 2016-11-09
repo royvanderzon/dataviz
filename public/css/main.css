@@ -175,6 +175,38 @@ ul.maxUlHeight {
     opacity: 0!important;
 }
 
+#selectChecks + .bootstrap-select,
+#selectChecks + .bootstrap-select .dropdown-menu,
+#selectChecks + .bootstrap-select .inner {
+  overflow: visible !important;
+}
+
+.checkExplanation {
+  position: absolute;
+  left: -28rem;
+  top: -2rem;
+
+  background-color: #494a4b;
+  color: #fff;
+  padding: 2rem 1rem;
+  width: 25rem;
+  min-height: 30rem;
+
+  display: none;
+}
+.checkExplanation::after {
+  content: ' ';
+  width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-left: 40px solid #494a4b;
+	border-bottom: 15px solid transparent;
+
+  position: absolute;
+  right: -3.5rem;
+  top: 2rem;
+}
+
 .addCanvas {
     cursor: pointer;
     padding-top: 30px;
