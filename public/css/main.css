@@ -76,6 +76,9 @@ ul.maxUlHeight {
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
     border-bottom: 4px solid rgb(201, 121, 121);
 }
+.lightRed{
+    background-color: rgba(201, 121, 121,0.5);
+}
 .tipcontainer .tooltip-ul{
     padding: 0;
     margin: 0;

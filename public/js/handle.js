@@ -1,3 +1,13 @@
+function compare(a,b) {
+  if (a.email_id < b.email_id){
+    return -1;
+  }
+  if (a.email_id > b.email_id){
+    return 1;
+  }
+  return 0;
+}
+
 var handleLangSelect = function(){
 	var html = '';
 	datavis.data.countries.list.sort();
@@ -34,14 +44,37 @@ var handleChecks = function(){
 var handleEmail = function(){
 
 	var html = '';
-	datavis.data.uniqueEmails.sort();
-	datavis.data.uniqueEmails.unshift('ALL EMAILS')
-	for(var i = 0;i<50;i++){
-	// for(var i = 0;i<datavis.data.uniqueEmails.length;i++){
-		// console.log(datavis.data.uniqueEmails[i])
-		if(datavis.data.uniqueEmails[i] != ''){
-			html += '<option value="'+datavis.data.uniqueEmails[i]+'">'+datavis.data.uniqueEmails[i]+'</option>';
+	datavis.data.uniqueEmailsWithFraud.sort(compare);
+	datavis.data.uniqueEmailsWithFraud.unshift({
+		email_id : 'ALL EMAILS',
+		fraud : 0
+	})
+
+	if(datavis.settings.fraudEmails){
+
+		html += '<option class="none hide" value="'+datavis.data.uniqueEmailsWithFraud[0].email_id+'">'+datavis.data.uniqueEmailsWithFraud[0].email_id+'</option>';
+		html += '<option value="'+datavis.data.uniqueEmailsWithFraud[0].email_id+'">'+datavis.data.uniqueEmailsWithFraud[0].email_id+'</option>';
+		// for(var i = 0;i<50;i++){
+		for(var i = 0;i<datavis.data.uniqueEmailsWithFraud.length;i++){
+			if(datavis.data.uniqueEmailsWithFraud[i].email_id != ''){
+				if(datavis.data.uniqueEmailsWithFraud[i].fraud > 0){
+					html += '<option class="lightRed" value="'+datavis.data.uniqueEmailsWithFraud[i].email_id+'">'+datavis.data.uniqueEmailsWithFraud[i].email_id+'</option>';
+				}
+			}
 		}
+
+	}else{
+
+		for(var i = 0;i<50;i++){
+			if(datavis.data.uniqueEmailsWithFraud[i].email_id != ''){
+				if(datavis.data.uniqueEmailsWithFraud[i].fraud < 1){
+					html += '<option value="'+datavis.data.uniqueEmailsWithFraud[i].email_id+'">'+datavis.data.uniqueEmailsWithFraud[i].email_id+'</option>';
+				}else{
+					html += '<option class="lightRed" value="'+datavis.data.uniqueEmailsWithFraud[i].email_id+'">'+datavis.data.uniqueEmailsWithFraud[i].email_id+'</option>';
+				}
+			}
+		}
+
 	}
 
 	$('#selectEmail').html(html);
