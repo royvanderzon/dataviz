@@ -222,8 +222,6 @@ $('.graphcontainer').on('click','.addCanvas',function(){
 $('.graphcontainer').on('click','.renewGraph',function(){
 	$(this).parent().parent().find('.addgraph').html($('#insertGraph').html());
 
-	console.log($(this))
-
 	var infoHtml = getInfoHtml();
 	$(this).parent().parent().find('.info').html(infoHtml);
 });
