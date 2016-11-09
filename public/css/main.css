@@ -237,17 +237,18 @@ ul.maxUlHeight {
     cursor: pointer;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .scrollup-container {
-    display: flex;
-    justify-content: center;
     margin-top: -.5em;
     margin-bottom: 1.5em;
 }
 
 .scrollup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 1.8rem;
     background: #C97979;
     color: #fff;
