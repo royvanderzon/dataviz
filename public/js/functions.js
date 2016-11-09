@@ -206,6 +206,15 @@ var datavis = {
 		check5 : 'This email address has been marked as fraud before',
 		check6 : 'This card number has been marked as fraud before',
 		total : 'Total stats of this graph'
+	},
+	checkDefinitionsLong : {
+		check1 : 'Some countries pose a high risk for fraud, regardless of what the country of the currency or issuing country is, such as Mexico or Bulgaria.',
+		check2 : 'Fraudsters often have a fraud profile that spans multiple regions. When one shopper email address or card number gets associated with multiple countries, this is an indication of possible fraud.',
+		check3 : 'Fraudsters often create multiple accounts and attempt to use the same compromised account with different techniques and attack merchants. This check is aimed at identifying when a card number is being used across multiple accounts.<br> Note that there are some legitimate cases in which this would occur: <ul><li>The user may have multiple accounts.</li><li>It may be a shared card in a family or business setting</li></ul>',
+		check4 : 'Fraudsters often try to use their stolen information on webshops during the nighttime. We consider this to be between 1:00 AM and 5:00 AM.',
+		check5 : 'The email address of this transaction has been used before, when it was marked by our system as being fraudulent. Therefore the chance that this next transaction will be fraud again is considerably high.',
+		check6 : 'This risk check fires when the shopper has previously had a transaction that got a blocked card response from the issuing bank.<br> Issuing Banks refuse transactions for a multitude of reasons, varying in correlation with fraud. Blocked card refusals usually indicate that the card has been canceled due to fraud and, as such, this can be used as a significant signal indicating a likely fraudulent user.',
+		total : 'Display all data without filtering checks.'
 	}
 }
 
