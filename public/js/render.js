@@ -456,6 +456,17 @@ var load = function(data) {
 		});
 	});
 
+	if(datavis.settings.sort != 'checks'){
+		console.log(datavis.settings.sort);
+		if(datavis.settings.sort == 'alert'){
+			data.sort(datavis.sort.alert);
+		}else if(datavis.settings.sort == 'denied'){
+			data.sort(datavis.sort.denied);
+		}else if(datavis.settings.sort == 'fraud'){
+			data.sort(datavis.sort.fraud);
+		}
+	}
+
 	//add totals bar
 	if(datavis.settings.showTotal){
 

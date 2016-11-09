@@ -54,7 +54,6 @@ var handleEmail = function(){
 		})
 	}
 
-	console.log(datavis.settings.fraudEmails)
 	if(datavis.settings.fraudEmails){
 
 		html += '<option class="none hide" value="'+datavis.data.uniqueEmailsWithFraud[0].email_id+'">'+datavis.data.uniqueEmailsWithFraud[0].email_id+'</option>';
@@ -89,6 +88,17 @@ var handleEmail = function(){
 
 
 $(document).ready(function(){
+
+	///////////////////////////////////////////////////////
+	// ADD COUNTRIES
+	///////////////////////////////////////////////////////
+
+	$('#sortGraph').on('change',function(){
+
+		datavis.settings.sort = $(this).val();
+		refresh();
+
+	});
 
 	///////////////////////////////////////////////////////
 	// ADD COUNTRIES

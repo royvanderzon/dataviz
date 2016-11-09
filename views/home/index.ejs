@@ -223,6 +223,12 @@
 
         <div class="row">
             <div class="col-sm-12 col-md-6 graphContainer">
+                <select class="selectpicker" id="sortGraph">
+                    <option value="checks">Checks</option>
+                    <option value="alert">Alert</option>
+                    <option value="denied">Denied</option>
+                    <option value="fraud">Fraud</option>
+                </select>
                 <div class="saveState"><i class="fa fa-save saveIcon"></i></div>
                 <div id="insertGraph"></div>
             </div>
@@ -272,7 +278,7 @@
                             <p>add graph</p>
                         </div>
                         <div class="showOnHoverGraph center">
-                            <i class="fa fa-plus renewGraph"></i>
+                            <i class="fa fa-refresh renewGraph"></i>
                         </div>
                         <div class="info">
                         </div>
