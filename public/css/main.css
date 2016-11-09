@@ -277,6 +277,9 @@ ul.maxUlHeight:nth-child(1) {
   height: 235px;
 }
 
+.fa-refresh {
+  margin-right: .2em;
+}
 
 /*#intro {
   margin-bottom: 3em;
