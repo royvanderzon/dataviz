@@ -46,10 +46,13 @@ var handleEmail = function(){
 	$('#selectEmail').html(html);
 	var html = '';
 	datavis.data.uniqueEmailsWithFraud.sort(compare);
-	datavis.data.uniqueEmailsWithFraud.unshift({
-		email_id : 'ALL EMAILS',
-		fraud : 0
-	})
+
+	if(datavis.data.uniqueEmailsWithFraud[0].email_id !== 'ALL EMAILS'){
+		datavis.data.uniqueEmailsWithFraud.unshift({
+			email_id : 'ALL EMAILS',
+			fraud : 0
+		})
+	}
 
 	console.log(datavis.settings.fraudEmails)
 	if(datavis.settings.fraudEmails){
@@ -60,7 +63,7 @@ var handleEmail = function(){
 		for(var i = 0;i<datavis.data.uniqueEmailsWithFraud.length;i++){
 			if(datavis.data.uniqueEmailsWithFraud[i].email_id != ''){
 				if(datavis.data.uniqueEmailsWithFraud[i].fraud > 0){
-					html += '<option class="lightRed" value="'+datavis.data.uniqueEmailsWithFraud[i].email_id+'">'+datavis.data.uniqueEmailsWithFraud[i].email_id+'</option>';
+					html += '<option value="'+datavis.data.uniqueEmailsWithFraud[i].email_id+'">'+datavis.data.uniqueEmailsWithFraud[i].email_id+'</option>';
 				}
 			}
 		}
