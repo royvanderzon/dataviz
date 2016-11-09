@@ -6,7 +6,8 @@ var datavis = {
 	},
 	settings : {
 		showTotal : false,
-		averageLine : false
+		averageLine : false,
+		fraudEmails : false
 	},
 	data : {
 		countries : {
@@ -21,6 +22,7 @@ var datavis = {
 			fraud : 0
 		},
 		uniqueEmails : [],
+		uniqueEmailsWithFraud : [],
 		cardNumbersWithEmails : [],
 		raw : [],
 		merged : [],
@@ -65,7 +67,7 @@ var datavis = {
 						break;
 					}
 				}
-				if(!found){
+				if(!found){ 
 					newData.push(data[i].email_id);
 				}
 
@@ -73,6 +75,47 @@ var datavis = {
 
 			datavis.data.uniqueEmails = newData;
 			return data;
+		},
+		emailsWithFraud : function(data){
+
+			var newData = [];
+
+			newData.push({
+				email_id : data[0].email_id,
+				fraud : data[0].fraud
+			});
+
+			for(var i = 0;i<data.length;i++){
+
+				var obj = {};
+
+				var found = false;
+				for(var ii = 0;ii<newData.length;ii++){
+					if(newData[ii].email_id == data[i].email_id){
+						found = true;
+						if(data[i].fraud > 0){
+							newData[ii].fraud++;
+						}
+						break;
+					}
+				}
+				if(!found){ 
+
+					obj.email_id = data[i].email_id;
+					obj.fraud = 0;
+					if(data[i].fraud == 1){
+						obj.fraud++;
+					}
+					newData.push(obj);
+
+				}
+
+			}
+
+			datavis.data.uniqueEmailsWithFraud = newData;
+			// console.log(datavis.data.uniqueEmailsWithFraud);
+			return data;
+
 		},
 		countEmails : function(data){
 

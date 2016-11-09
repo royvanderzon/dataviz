@@ -7,6 +7,7 @@ var init = function(cb){
 	var data = datavis.data.raw;
 
 	data = datavis.getters.emails(data);
+	data = datavis.getters.emailsWithFraud(data);
 
 	//check 1
 	check1(data,function(){
@@ -67,6 +68,12 @@ init(function(data){
 var refresh = function(){
 
 		var filteredData = filterData(datavis.data.merged);
+
+		//refreshEmail
+		if(datavis.settings.fraudEmails){
+			handleEmail();
+		}
+
 		//load data
 		load(formData(filteredData));
 }
@@ -249,6 +256,16 @@ $("[name='averageLine']").bootstrapSwitch();
 $('input[name="averageLine"]').on('switchChange.bootstrapSwitch', function(event, state) {
 
   datavis.settings.averageLine = state;
+
+  refresh();
+
+});
+
+$("[name='fraudEmails']").bootstrapSwitch();
+
+$('input[name="fraudEmails"]').on('switchChange.bootstrapSwitch', function(event, state) {
+
+  datavis.settings.fraudEmails = state;
 
   refresh();
 
