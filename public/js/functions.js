@@ -199,12 +199,12 @@ var datavis = {
 		}
 	},
 	checkDefinitions : {
-		check1 : 'The amount does not coincide with the average amount',
-		check2 : 'Shopper email or card number is used in quick succession',
-		check3 : 'Shopper country is high risk',
-		check4 : 'Different countries used by the same shopper email address',
-		check5 : 'Shopper country differs from issuing country and/or country of currency',
-		check6 : 'Card number already used by other shopper (shopper email)',
+		check1 : 'Shopper country is high risk',
+		check2 : 'Different countries used by the same shopper email address',
+		check3 : 'Card number already used by other shopper (shopper email)',
+		check4 : 'The transaction is made by night',
+		check5 : 'This email address has been marked as fraud before',
+		check6 : 'This card number has been marked as fraud before',
 		total : 'Total stats of this graph'
 	}
 }
