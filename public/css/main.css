@@ -266,7 +266,7 @@ ul.maxUlHeight {
 }
 
 .scrollup:hover {
-    opacity: .7;
+    background: rgb(104, 61, 61);
 }
 
 .scrollup p {
