@@ -223,7 +223,7 @@ $('.graphcontainer').on('click','.renewGraph',function(){
 	$(this).parent().parent().find('.info').html(infoHtml);
 });
 
-// autoscrollup
+// Autoscrollup
 
 $('.scrollup').click(function() {
   $('html,body').animate(
@@ -233,6 +233,8 @@ $('.scrollup').click(function() {
 		'slow'
 	);
 });
+
+// Average and total toggles
 
 $("[name='showTotal']").bootstrapSwitch();
 
@@ -253,6 +255,52 @@ $('input[name="averageLine"]').on('switchChange.bootstrapSwitch', function(event
   refresh();
 
 });
+
+// Checks hover explanation
+
+var checkDefinitions = datavis.checkDefinitions;
+var checkDefinitionsLong = datavis.checkDefinitionsLong;
+
+var renderDefinition = function() {
+	var html = '';
+	var definition = checkDefinitions['check' + +index];
+	var definitionLong = checkDefinitionsLong['check' + +index];
+
+	if (definition === undefined) {
+		html += '<h4>' + checkDefinitions['total'] + '</h4>';
+		html += '<br>';
+		html += checkDefinitionsLong['total'];
+
+		return html;
+	} else {
+		html += '<h4>' + definition + '</h4>';
+		html += '<br>';
+		html += definitionLong;
+
+		return html;
+	}
+}
+
+var dropdown = $('#selectChecks + .bootstrap-select');
+var dropdownList = $('#selectChecks + .bootstrap-select .selectpicker > li');
+
+for (var i = 0; i < dropdownList.length; i++) {
+	var index = $(dropdownList[i]).attr('data-original-index');
+	if (i === +index) {
+		$(dropdownList[i]).append('<div class="checkExplanation">' + renderDefinition() + '</div>');
+	}
+}
+
+for (var i = 0; i < dropdownList.length; i++) {
+	$(dropdownList[i]).on('mouseover', function(event) {
+		var item = event.target.closest('li');
+		$(item).children('.checkExplanation').css('display', 'block');
+	});
+	$(dropdownList[i]).on('mouseout', function(event) {
+		var item = event.target.closest('li');
+		$(item).children('.checkExplanation').css('display', 'none');
+	});
+}
 
 // $('.removegraph').on('click', derp, function() {
 // 	 $('.cloneA').replaceWith($('.addgraph:first').clone());
