@@ -217,6 +217,7 @@ ul.maxUlHeight {
 .addCanvas p {
     text-align: center;
     width: 100%;
+    margin-top: .6em;
 }
 
 .insertGraph .showOnHoverGraph i:hover {
@@ -238,7 +239,7 @@ ul.maxUlHeight {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.8rem;
     background: #C97979;
     color: #fff;
     border-radius: 100%;
@@ -251,6 +252,15 @@ ul.maxUlHeight {
 
 .scrollup p {
     text-align: center;
+}
+
+.badge {
+  padding: 4px 7px;
+  background-color: #C97979;
+}
+
+.badge:hover {
+  opacity: .8;
 }
 
 

@@ -392,15 +392,15 @@ var svg = d3.select("#insertGraph").append("svg")
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var titleLabels = [{ 
-		cx: -20, 
-		cy: -22, 
-		radius: 20, 
-		label : "email accounts : " + datavis.data.counts.emails 
-	},{ 
-		cx: -20, 
-		cy: -11, 
-		radius: 20, 
+var titleLabels = [{
+		cx: -20,
+		cy: -22,
+		radius: 20,
+		label : "email accounts : " + datavis.data.counts.emails
+	},{
+		cx: -20,
+		cy: -11,
+		radius: 20,
 		label : "transactions : " + datavis.data.counts.transactions
 	}];
 
@@ -480,22 +480,22 @@ var load = function(data) {
 		totalBar.ages = agesArray;
 
 		data.unshift(totalBar);
-		
+
 	}
 	// console.log(data);
 
 	//set text labels with totals
 	svg.selectAll(".textLabels").remove();
 
-	var titleLabels = [{ 
-		cx: -20, 
-			cy: -30, 
-			radius: 20, 
-			label : "email accounts : " + datavis.data.counts.emails 
-		},{ 
-			cx: -20, 
-			cy: -17, 
-			radius: 20, 
+	var titleLabels = [{
+		cx: -20,
+			cy: -30,
+			radius: 20,
+			label : "email accounts : " + datavis.data.counts.emails
+		},{
+			cx: -20,
+			cy: -17,
+			radius: 20,
 			label : "transactions : " + datavis.data.counts.transactions
 		}];
 
@@ -513,7 +513,7 @@ var load = function(data) {
      	.attr("font-size", "12px")
         .attr("fill", "#333");
 
-    //set domains 
+    //set domains
 	x0.domain(data.map(function(d) {
 		return d.State;
 	}));
@@ -641,7 +641,7 @@ var load = function(data) {
 		averages.alert = averages.alert / data.length;
 		averages.denied = averages.denied / data.length;
 		averages.fraud = averages.fraud / data.length;
-			
+
 		//average lines
 		var line = svg.append('g');
 
