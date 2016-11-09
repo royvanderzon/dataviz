@@ -7,7 +7,8 @@ var datavis = {
 	settings : {
 		showTotal : false,
 		averageLine : false,
-		fraudEmails : false
+		fraudEmails : false,
+		sort : 'checks'
 	},
 	data : {
 		countries : {
@@ -239,6 +240,35 @@ var datavis = {
 			}else{
 				return data;
 			}
+		}
+	},
+	sort : {
+		alert : function(a,b){
+			if (a.alert > b.alert){
+			    return -1;
+			}else{
+				if (a.alert < b.alert)
+		    	return 1;
+			}
+			return 0;
+		},
+		denied : function(a,b){
+			if (a.denied > b.denied){
+			    return -1;
+			}else{
+				if (a.denied < b.denied)
+		    	return 1;
+			}
+			return 0;
+		},
+		fraud : function(a,b){
+			if (a.fraud > b.fraud){
+			    return -1;
+			}else{
+				if (a.fraud < b.fraud)
+		    	return 1;
+			}
+			return 0;
 		}
 	},
 	checkDefinitions : {
