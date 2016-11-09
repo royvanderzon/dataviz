@@ -243,15 +243,24 @@ $("[name='showTotal']").bootstrapSwitch();
 
 $('input[name="showTotal"]').on('switchChange.bootstrapSwitch', function(event, state) {
 
-  datavis.settings.showTotal = state;
 
-  refresh();
+	if($("[name='showTotal']").bootstrapSwitch('state') && $("[name='averageLine']").bootstrapSwitch('state')){
+		$("[name='averageLine']").bootstrapSwitch('state',false);
+	}
+
+	datavis.settings.showTotal = state;
+
+	refresh();
 
 });
 
 $("[name='averageLine']").bootstrapSwitch();
 
 $('input[name="averageLine"]').on('switchChange.bootstrapSwitch', function(event, state) {
+
+	if($("[name='averageLine']").bootstrapSwitch('state') && $("[name='showTotal']").bootstrapSwitch('state')){
+		$("[name='showTotal']").bootstrapSwitch('state',false);
+	}
 
   datavis.settings.averageLine = state;
 
