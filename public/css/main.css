@@ -25,6 +25,12 @@ body {
   margin-top: 6em;
 }
 
+.navbar-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .state {
   cursor: help;
 }
