@@ -238,6 +238,12 @@ ul.maxUlHeight {
   display: none;
 }
 
+.defHeader {
+  font-size: 1.3em;
+  line-height: 2.5rem;
+  padding-bottom: .4em;
+}
+
 .checkExplanation::after {
   content: ' ';
   width: 0;
