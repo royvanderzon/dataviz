@@ -232,10 +232,27 @@ $(document).ready(function(){
 	///////////////////////////////////////////////////////
 
 	$('.saveState').click(function(){
+		$('#saveStateName').modal();
+	})
+
+	$('.closeSaveModal').click(function(){
+		$('#notLongError').slideUp();
+	})
+
+	$('#saveStateNameButton').click(function(){
 
 		var saveObj = {};
 
-		saveObj.name = prompt('Save State name?');
+		// saveObj.name = prompt('Save State name?');
+		saveObj.name = $('#saveStateNameInput').val();
+
+		if(saveObj.name.length < 1){
+			$('#notLongError').slideDown();
+			return;
+		}
+
+		$('#notLongError').hide();
+
 		saveObj.id = getCounter();
 		saveObj.time = moment().unix();
 		saveObj.langs = datavis.loadOptions.langs;
@@ -251,6 +268,10 @@ $(document).ready(function(){
 		setLocal(saveStates)
 
 		refreshSaveList();
+
+		//close modal
+		$('#saveStateName').modal('hide');
+		$('#saveStateNameInput').val('')
 
 	});
 

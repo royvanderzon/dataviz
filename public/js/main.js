@@ -67,13 +67,14 @@ init(function(data){
 
 var refresh = function(){
 
-		var filteredData = filterData(datavis.data.merged);
+	var filteredData = filterData(datavis.data.merged);
 
-		//refreshEmail
-		handleEmail();
+	//refreshEmail
+	handleEmail();
 
-		//load data
-		load(formData(filteredData));
+	//load data
+	load(formData(filteredData));
+
 }
 
 $(document).ready(function(){
