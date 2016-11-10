@@ -20,6 +20,9 @@ body {
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
   outline: 0;
 }
+.bootstrap-select .btn:focus {
+  outline: 0 !important;
+}
 
 .container > .row:first-of-type {
   margin-top: 2em;
