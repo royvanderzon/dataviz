@@ -327,11 +327,30 @@
             </div>
         </div>
 
+    </div>
 
-
-
-
-
+    <div class="modal fade" id="saveStateName">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close closeSaveModal" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Save state</h4>
+                </div>
+                <div id="notLongError" class="alert alert-danger noneShow">
+                  <strong>Error!</strong> Please fill in a name longer than one character
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" id="saveStateNameInput" placeholder="Input field">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closeSaveModal" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveStateNameButton">Save</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- SCRIPTS -->
