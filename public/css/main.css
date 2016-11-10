@@ -17,7 +17,7 @@ body {
     width: 90%;
 }
 
-#firstrow {
+.container > .row:first-of-type {
   margin-top: 2em;
 }
 
