@@ -36,6 +36,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+
+  margin: 0 !important;
 }
 
 .state {
@@ -97,7 +99,6 @@ ul.maxUlHeight {
 
 .navbar-brand {
     padding: 5px 15px;
-    margin-left: 25%;
 }
 
 .navbar-brand img {
