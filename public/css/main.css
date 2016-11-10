@@ -101,6 +101,13 @@ ul.maxUlHeight {
     padding: 5px 15px;
 }
 
+@media (max-width: 767px) {
+  #intro + div .row > div {
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+}
+
 .navbar-brand img {
     margin-top: .4em;
     width: 5em;
