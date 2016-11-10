@@ -339,7 +339,18 @@ ul.maxUlHeight:nth-child(1) {
 .fa-refresh {
   margin-right: .2em;
 }
-
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.noneShow{
+    display: none;
+}
+#notLongError {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
 /*#intro {
   margin-bottom: 3em;
 }
