@@ -289,14 +289,12 @@ var renderDefinition = function() {
 	var definitionLong = checkDefinitionsLong['check' + +index];
 
 	if (definition === undefined) {
-		html += '<h4>' + checkDefinitions['total'] + '</h4>';
-		html += '<br>';
+		html += '<h4 class="defHeader">' + checkDefinitions['total'] + '</h4>';
 		html += checkDefinitionsLong['total'];
 
 		return html;
 	} else {
-		html += '<h4>' + definition + '</h4>';
-		html += '<br>';
+		html += '<h4 class="defHeader">' + definition + '</h4>';
 		html += definitionLong;
 
 		return html;

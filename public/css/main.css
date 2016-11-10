@@ -225,23 +225,31 @@ ul.maxUlHeight {
 
 .checkExplanation {
   position: absolute;
-  left: -28rem;
+  left: -38rem;
   top: -2rem;
 
-  background-color: #494a4b;
+  background-color: #222;
   color: #fff;
-  padding: 2rem 1rem;
-  width: 25rem;
-  min-height: 30rem;
+  padding: 1.5rem 2.5rem 3.5rem 2.5rem;
+  width: 35rem;
+  line-height: 2rem;
+  font-size: .9em;
 
   display: none;
 }
+
+.defHeader {
+  font-size: 1.3em;
+  line-height: 2.5rem;
+  padding-bottom: .4em;
+}
+
 .checkExplanation::after {
   content: ' ';
   width: 0;
 	height: 0;
 	border-top: 15px solid transparent;
-	border-left: 40px solid #494a4b;
+	border-left: 40px solid #222;
 	border-bottom: 15px solid transparent;
 
   position: absolute;
