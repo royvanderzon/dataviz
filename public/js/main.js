@@ -322,6 +322,10 @@ for (var i = 0; i < dropdownList.length; i++) {
 	});
 }
 
+$('#selectEmailContainer .selectpicker').selectpicker({
+    dropupAuto: false
+});
+
 
 // $('.removegraph').on('click', derp, function() {
 // 	 $('.cloneA').replaceWith($('.addgraph:first').clone());
