@@ -303,7 +303,7 @@ var renderDefinition = function() {
 }
 
 var dropdown = $('#selectChecks + .bootstrap-select');
-var dropdownList = $('#selectChecks + .bootstrap-select .selectpicker > li');
+var dropdownList = $(dropdown).find('.selectpicker > li');
 
 for (var i = 0; i < dropdownList.length; i++) {
 	var index = $(dropdownList[i]).attr('data-original-index');
